@@ -1,0 +1,6 @@
+2014-02-21 22:08:55 p67453127 4Adbiy-1WLfEu1bhf-008XG8 |< REMOTE=95.116.194.56 SCRIPT=//zimplit.php -- /usr/sbin/sendmail -t -i
+2014-02-21 22:08:55 p67453127 4Adbiy-1WLfEu1bhf-008XG8 <= S=cgi-mailer-bounces-398885755@kundenserver.de SZ=770 D=0 SID=398885755
+2014-02-21 22:08:55 p67453127 4Adbiy-1WLfEu1bhf-008XG8 => godhands@bin-wieder-da.de msmtp.kundenserver.de[172.19.35.7] 250 Message 0M2CHo-1X6S1r20O4-00sA9E accepted by mreue007.kundenserver.de
+2014-02-21 22:09:15 p67453127 49rQzQ-1X7q0i0Pl9-00v9gi |< REMOTE=95.116.194.56 SCRIPT=//zimplit.php -- /usr/sbin/sendmail -t -i
+2014-02-21 22:09:15 p67453127 49rQzQ-1X7q0i0Pl9-00v9gi <= S=cgi-mailer-bounces-398885755@kundenserver.de SZ=680 D=0 SID=398885755
+2014-02-21 22:09:15 p67453127 49rQzQ-1X7q0i0Pl9-00v9gi => godhands@bin-wieder-da.de msmtp.kundenserver.de[172.19.35.7] 250 Message 0MQrwA-1Whsub0oJC-00UH0X accepted by mreue005.kundenserver.de

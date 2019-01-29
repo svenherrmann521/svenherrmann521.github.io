@@ -1,0 +1,472 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:pm="http://www.polymake.de/ns/docs#3" xml:lang="en" lang="en">
+  <head>
+    <title>polymake documentation</title>
+    <link rel="stylesheet" href="docstyle.css" />
+    <script type="text/javascript" src="functions.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  </head>
+  <body onload="start()">
+    <div id="header_top">
+      <div class="biglogo">
+        <img src="images/pmlogobig.png" alt="polymake" />
+      </div>
+      <a href="index.html">
+        <img src="images/doclogo.png" alt="polymake wiki" class="toplogo" />
+      </a>
+    </div>
+    <div id="container">
+      <div id="page">
+        <div class="sidebar">
+          <div class="sidebox">
+            <h1>Navigation</h1>
+            <ul>
+              <li>
+                <a href="index.html#apps">applications</a>
+              </li>
+              <li>
+                <a href="core.html">core functionality</a>
+              </li>
+              <li>
+                <a href="doc_index.html">index</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div xmlns="" id="content"><h1>application: fan</h1><div class="descr"><p> This application deals with polyhedral fans. You can define a fan, e.g. via its <a href="#i89" onclick="unfold('span:i89');">RAYS</a> and <a href="#i98" onclick="unfold('span:i98');">MAXIMAL_CONES</a>
+ and compute several properties like <a href="#i80" onclick="unfold('span:i80');">HASSE_DIAGRAM</a> and <a href="#i85" onclick="unfold('span:i85');">F_VECTOR</a>.</p></div><br /><b>imports from: </b><a href="common.html">common</a>, <a href="graph.html">graph</a>, <a href="polytope.html">polytope</a><br /><b>uses: </b><a href="group.html">group</a>, <a href="topaz.html">topaz</a><br /><div class="level2"><h2><b>Objects</b></h2><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i9" onclick="swap_content('span:i9'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i9" onclick="swap_content('span:i9'); return false;"><span class="object">PolyhedralComplex</span></a></h3></div><div style="display: inline" id="span:i9" class="foldit"><div class="descr"><p> A polyhedral complex</p></div><b>derived from: </b><a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a><br /><div class="level3"></div><h4>Properties of PolyhedralComplex</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i34" onclick="swap_content('span:i34'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i34" onclick="swap_content('span:i34'); return false;"><b>AFFINE_HULL</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i34" class="foldit"><div class="descr"><p> Alias for property <a href="#i92" onclick="unfold('span:i92');">LINEAR_SPAN_NORMALS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i37" onclick="swap_content('span:i37'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i37" onclick="swap_content('span:i37'); return false;"><b>BOUNDED</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i37" class="foldit"><div class="undoc"><p>UNDOCUMENTED</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i39" onclick="swap_content('span:i39'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i39" onclick="swap_content('span:i39'); return false;"><b>INPUT_POLYTOPES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i39" class="foldit"><div class="descr"><p> Alias for property <a href="#i94" onclick="unfold('span:i94');">INPUT_CONES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i43" onclick="swap_content('span:i43'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i43" onclick="swap_content('span:i43'); return false;"><b>MAXIMAL_POLYTOPES</b>:
+		</a><a href="common.html#i27" onclick="unfold('span:i27');">common::IncidenceMatrix&lt;NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i43" class="foldit"><div class="descr"><p> Alias for property <a href="#i98" onclick="unfold('span:i98');">MAXIMAL_CONES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i48" onclick="swap_content('span:i48'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i48" onclick="swap_content('span:i48'); return false;"><b>MAXIMAL_POLYTOPES_AFFINE_HULL_NORMALS</b>:
+		</a><a href="common.html#i27" onclick="unfold('span:i27');">common::IncidenceMatrix&lt;NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i48" class="foldit"><div class="descr"><p> Alias for property <a href="#i91" onclick="unfold('span:i91');">MAXIMAL_CONES_LINEAR_SPAN_NORMALS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i33" onclick="swap_content('span:i33'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i33" onclick="swap_content('span:i33'); return false;"><b>MAXIMAL_POLYTOPES_COMBINATORIAL_DIMS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i33" class="foldit"><div class="descr"><p> Alias for property <a href="#i77" onclick="unfold('span:i77');">MAXIMAL_CONES_COMBINATORIAL_DIMS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i38" onclick="swap_content('span:i38'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i38" onclick="swap_content('span:i38'); return false;"><b>MAXIMAL_POLYTOPES_FACETS</b>:
+		</a><a href="common.html#i51" onclick="unfold('span:i51');">common::SparseMatrix&lt;Int, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i38" class="foldit"><div class="descr"><p> Alias for property <a href="#i107" onclick="unfold('span:i107');">MAXIMAL_CONES_FACETS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i45" onclick="swap_content('span:i45'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i45" onclick="swap_content('span:i45'); return false;"><b>MAXIMAL_POLYTOPES_INCIDENCES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;IncidenceMatrix&lt;NonSymmetric&gt;&gt;</a><br /><div style="display: inline" id="span:i45" class="foldit"><div class="descr"><p> Alias for property <a href="#i78" onclick="unfold('span:i78');">MAXIMAL_CONES_INCIDENCES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i46" onclick="swap_content('span:i46'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i46" onclick="swap_content('span:i46'); return false;"><b>N_MAXIMAL_POLYTOPES</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i46" class="foldit"><div class="descr"><p> Alias for property <a href="#i99" onclick="unfold('span:i99');">N_MAXIMAL_CONES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i44" onclick="swap_content('span:i44'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i44" onclick="swap_content('span:i44'); return false;"><b>N_POINTS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i44" class="foldit"><div class="descr"><p> Alias for property <a href="#i95" onclick="unfold('span:i95');">N_INPUT_RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i41" onclick="swap_content('span:i41'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i41" onclick="swap_content('span:i41'); return false;"><b>N_VERTICES</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i41" class="foldit"><div class="descr"><p> Alias for property <a href="#i88" onclick="unfold('span:i88');">N_RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i42" onclick="swap_content('span:i42'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i42" onclick="swap_content('span:i42'); return false;"><b>POINTS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i42" class="foldit"><div class="descr"><p> Alias for property <a href="#i100" onclick="unfold('span:i100');">INPUT_RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i36" onclick="swap_content('span:i36'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i36" onclick="swap_content('span:i36'); return false;"><b>POINT_LABELS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;String&gt;</a><br /><div style="display: inline" id="span:i36" class="foldit"><div class="undoc"><p>UNDOCUMENTED</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i47" onclick="swap_content('span:i47'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i47" onclick="swap_content('span:i47'); return false;"><b>VERTEX_LABELS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;String&gt;</a><br /><div style="display: inline" id="span:i47" class="foldit"><div class="descr"><p> Alias for property <a href="#i102" onclick="unfold('span:i102');">RAY_LABELS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i35" onclick="swap_content('span:i35'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i35" onclick="swap_content('span:i35'); return false;"><b>VERTICES</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i35" class="foldit"><div class="descr"><p> Alias for property <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i40" onclick="swap_content('span:i40'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i40" onclick="swap_content('span:i40'); return false;"><span class="category">Basic properties</span></a></h3></div><div style="display: inline" id="span:i40" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i67" onclick="swap_content('span:i67'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i67" onclick="swap_content('span:i67'); return false;"><b>CONVEX</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i67" class="foldit"><div class="descr"><p> True if <a href="#i42" onclick="unfold('span:i42');">POINTS</a> are in convex position.
+ In this case <a href="#i42" onclick="unfold('span:i42');">POINTS</a> and <a href="#i89" onclick="unfold('span:i89');">RAYS</a>, and
+ <a href="#i66" onclick="unfold('span:i66');">MAXIMAL_CELLS</a> and <a href="#i43" onclick="unfold('span:i43');">MAXIMAL_POLYTOPES</a>
+ are equal.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i66" onclick="swap_content('span:i66'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i66" onclick="swap_content('span:i66'); return false;"><b>MAXIMAL_CELLS</b>:
+		</a><a href="common.html#i27" onclick="unfold('span:i27');">common::IncidenceMatrix&lt;NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i66" class="foldit"><div class="descr"><p> Maximal cells of the polyhedral complex.
+ Indices refer to <a href="#i42" onclick="unfold('span:i42');">POINTS</a>. Points do
+ not have to be vertices of the cells.</p></div></div></div></div></li></ul></div></div></div></li></ul><h4>User Methods of PolyhedralComplex</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i31" onclick="swap_content('span:i31'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i31" onclick="swap_content('span:i31'); return false;"><b>AMBIENT_DIM</b></a>
+			()  
+
+			<div style="display: inline" id="span:i31" class="foldit"><br /><div class="descr_func"><div class="undoc"><p>UNDOCUMENTED</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i30" onclick="swap_content('span:i30'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i30" onclick="swap_content('span:i30'); return false;"><b>DIM</b></a>
+			()  
+
+			<div style="display: inline" id="span:i30" class="foldit"><br /><div class="descr_func"><div class="undoc"><p>UNDOCUMENTED</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i32" onclick="swap_content('span:i32'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i32" onclick="swap_content('span:i32'); return false;"><b>polytope</b></a>
+			()  
+
+			<div style="display: inline" id="span:i32" class="foldit"><br /><div class="descr_func"><div class="undoc"><p>UNDOCUMENTED</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i29" onclick="swap_content('span:i29'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i29" onclick="swap_content('span:i29'); return false;"><span class="category">Visualization</span></a></h3></div><div style="display: inline" id="span:i29" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i65" onclick="swap_content('span:i65'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i65" onclick="swap_content('span:i65'); return false;"><b>VISUAL</b></a>
+			()  
+
+			<div style="display: inline" id="span:i65" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Visualizes the polyhedral complex.
+ return: Visual::PolyhedralComplex</p></div></div><div class="level3"><h5>Options</h5><table class="args"><tr><td>option list:</td><td>Visual::Polygons::decorations</td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i134" onclick="swap_content('span:i134'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i134" onclick="swap_content('span:i134'); return false;"><b>VISUAL</b></a>
+			()  
+
+			<div style="display: inline" id="span:i134" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Visualizes the polyhedral complex.
+ return: Visual::PolyhedralComplex</p></div></div><div class="level3"><h5>Options</h5><table class="args"><tr><td>option list:</td><td>Visual::Polygons::decorations</td></tr></table></div></div></div></div></li></ul></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i10" onclick="swap_content('span:i10'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i10" onclick="swap_content('span:i10'); return false;"><span class="object">PolyhedralFan</span></a></h3></div><div style="display: inline" id="span:i10" class="foldit"><div class="descr"><p> A polyhedral fan.
+ The current restriction is that each cone in the fan has to be pointed.  This will be relaxed later.
+ If a fan is specified via <a href="#i100" onclick="unfold('span:i100');">INPUT_RAYS</a> and <a href="#i94" onclick="unfold('span:i94');">INPUT_CONES</a> each input cone must list all the input rays incident.</p><p> Once non-trivial linealities are allowed the following will apply:
+ The <a href="#i89" onclick="unfold('span:i89');">RAYS</a> always lie in a linear subspace which is complementary to the <a href="#i97" onclick="unfold('span:i97');">LINEALITY_SPACE</a>.</p></div><div class="level3"></div><h4>Properties of PolyhedralFan</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i55" onclick="swap_content('span:i55'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i55" onclick="swap_content('span:i55'); return false;"><span class="category">Basic properties</span></a></h3></div><div style="display: inline" id="span:i55" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i106" onclick="swap_content('span:i106'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i106" onclick="swap_content('span:i106'); return false;"><b>CONES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;IncidenceMatrix&lt;NonSymmetric&gt;&gt;</a><br /><div style="display: inline" id="span:i106" class="foldit"><div class="descr"><p> List of all cones of the fan of each dimension.  Indices refer to <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i101" onclick="swap_content('span:i101'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i101" onclick="swap_content('span:i101'); return false;"><b>FACET_NORMALS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i101" class="foldit"><div class="descr"><p> The possible facet normals of all maximal cones.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i90" onclick="swap_content('span:i90'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i90" onclick="swap_content('span:i90'); return false;"><b>FAN_AMBIENT_DIM</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i90" class="foldit"><div class="descr"><p> Dimension of the space which contains the polyhedral fan.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i105" onclick="swap_content('span:i105'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i105" onclick="swap_content('span:i105'); return false;"><b>FAN_DIM</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i105" class="foldit"><div class="descr"><p> Dimension of the polyhedral fan.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i108" onclick="swap_content('span:i108'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i108" onclick="swap_content('span:i108'); return false;"><b>FULL_DIM</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i108" class="foldit"><div class="descr"><p> <a href="#i105" onclick="unfold('span:i105');">FAN_DIM</a> and <a href="#i90" onclick="unfold('span:i90');">FAN_AMBIENT_DIM</a> coincide.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i94" onclick="swap_content('span:i94'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i94" onclick="swap_content('span:i94'); return false;"><b>INPUT_CONES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i94" class="foldit"><div class="descr"><p> Maybe redundant list of not necessarily maximal cones.  Indices refer to <a href="#i100" onclick="unfold('span:i100');">INPUT_RAYS</a>.
+ each cone must list all rays of <a href="#i100" onclick="unfold('span:i100');">INPUT_RAYS</a> it contains.
+ the cones are allowed to contain lineality</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i96" onclick="swap_content('span:i96'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i96" onclick="swap_content('span:i96'); return false;"><b>INPUT_LINEALITY</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i96" class="foldit"><div class="descr"><p> Vectors whose linear span defines 
+ a subset of the lineality space of the fan; 
+ redundancies are allowed.</p><p> Input section only.  Ask for <a href="#i97" onclick="unfold('span:i97');">LINEALITY_SPACE</a> if 
+ you want to know the lineality space.
+ FIXME currently polymake can only handle <a href="#i103" onclick="unfold('span:i103');">POINTED</a> cones</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i100" onclick="swap_content('span:i100'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i100" onclick="swap_content('span:i100'); return false;"><b>INPUT_RAYS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i100" class="foldit"><div class="descr"><p> Rays from which the cones are formed.  May be redundant.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i86" onclick="swap_content('span:i86'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i86" onclick="swap_content('span:i86'); return false;"><b>LINEALITY_DIM</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i86" class="foldit"><div class="descr"><p> Dimension of <a href="#i97" onclick="unfold('span:i97');">LINEALITY_SPACE</a>.
+ FIXME currently polymake can only handle <a href="#i103" onclick="unfold('span:i103');">POINTED</a> cones</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i97" onclick="swap_content('span:i97'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i97" onclick="swap_content('span:i97'); return false;"><b>LINEALITY_SPACE</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i97" class="foldit"><div class="descr"><p> Since we do not require our cones to be pointed: a basis of the lineality space of the fan.
+ FIXME currently polymake can only handle <a href="#i103" onclick="unfold('span:i103');">POINTED</a> cones</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i92" onclick="swap_content('span:i92'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i92" onclick="swap_content('span:i92'); return false;"><b>LINEAR_SPAN_NORMALS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i92" class="foldit"><div class="descr"><p> The possible linear span normals of all maximal cones.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i98" onclick="swap_content('span:i98'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i98" onclick="swap_content('span:i98'); return false;"><b>MAXIMAL_CONES</b>:
+		</a><a href="common.html#i27" onclick="unfold('span:i27');">common::IncidenceMatrix&lt;NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i98" class="foldit"><div class="descr"><p> Non redundant list of maximal cones.  Indices refer to <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i107" onclick="swap_content('span:i107'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i107" onclick="swap_content('span:i107'); return false;"><b>MAXIMAL_CONES_FACETS</b>:
+		</a><a href="common.html#i51" onclick="unfold('span:i51');">common::SparseMatrix&lt;Int, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i107" class="foldit"><div class="descr"><p> Tells for each maximal cone what are its facets.
+ A negative number means that the corresponding row of
+ <a href="#i101" onclick="unfold('span:i101');">FACET_NORMALS</a> has to be negated.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i91" onclick="swap_content('span:i91'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i91" onclick="swap_content('span:i91'); return false;"><b>MAXIMAL_CONES_LINEAR_SPAN_NORMALS</b>:
+		</a><a href="common.html#i27" onclick="unfold('span:i27');">common::IncidenceMatrix&lt;NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i91" class="foldit"><div class="descr"><p> Tells for each maximal cone what is its linear span.
+ Indices refer to <a href="#i92" onclick="unfold('span:i92');">LINEAR_SPAN_NORMALS</a>.
+ Rows correspond to <a href="#i107" onclick="unfold('span:i107');">MAXIMAL_CONES_FACETS</a></p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i93" onclick="swap_content('span:i93'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i93" onclick="swap_content('span:i93'); return false;"><b>N_FACET_NORMALS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i93" class="foldit"><div class="descr"><p> The number of possible facet normals of all maximal cones.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i95" onclick="swap_content('span:i95'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i95" onclick="swap_content('span:i95'); return false;"><b>N_INPUT_RAYS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i95" class="foldit"><div class="descr"><p> Number of <a href="#i100" onclick="unfold('span:i100');">INPUT_RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i99" onclick="swap_content('span:i99'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i99" onclick="swap_content('span:i99'); return false;"><b>N_MAXIMAL_CONES</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i99" class="foldit"><div class="descr"><p> Number of <a href="#i98" onclick="unfold('span:i98');">MAXIMAL_CONES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i88" onclick="swap_content('span:i88'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i88" onclick="swap_content('span:i88'); return false;"><b>N_RAYS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i88" class="foldit"><div class="descr"><p> Number of <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i104" onclick="swap_content('span:i104'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i104" onclick="swap_content('span:i104'); return false;"><b>ORTH_LINEALITY_SPACE</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i104" class="foldit"><div class="descr"><p> A basis of the orthogonal complement to <a href="#i97" onclick="unfold('span:i97');">LINEALITY_SPACE</a>.
+ All <a href="#i89" onclick="unfold('span:i89');">RAYS</a> are contained in this subspace</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i103" onclick="swap_content('span:i103'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i103" onclick="swap_content('span:i103'); return false;"><b>POINTED</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i103" class="foldit"><div class="descr"><p> <a href="#i97" onclick="unfold('span:i97');">LINEALITY_SPACE</a> is trivial.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i89" onclick="swap_content('span:i89'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i89" onclick="swap_content('span:i89'); return false;"><b>RAYS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i89" class="foldit"><div class="descr"><p> Rays from which the cones are formed.  Non-redundant.
+ If the fan is not pointed then the rays lie in the subspace 
+ of dimension <a href="#i76" onclick="unfold('span:i76');">COMBINATORIAL_DIM</a> defined by <a href="#i104" onclick="unfold('span:i104');">ORTH_LINEALITY_SPACE</a>
+ FIXME currently only pointed fans are allowed, this restriction is not enforced</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i102" onclick="swap_content('span:i102'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i102" onclick="swap_content('span:i102'); return false;"><b>RAY_LABELS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;String&gt;</a><br /><div style="display: inline" id="span:i102" class="foldit"><div class="descr"><p> Unique names assigned to the <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.
+ If specified, they are shown by visualization tools instead of vertex indices.</p><p> For a polyhedral fan built from scratch, you should create this property by yourself,
+ either manually in a text editor, or with a client program.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i87" onclick="swap_content('span:i87'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i87" onclick="swap_content('span:i87'); return false;"><b>REGULAR</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i87" class="foldit"><div class="descr"><p> True if the fan is the normal fan of a polyhedron.</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i54" onclick="swap_content('span:i54'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i54" onclick="swap_content('span:i54'); return false;"><span class="category">Combinatorics</span></a></h3></div><div style="display: inline" id="span:i54" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i76" onclick="swap_content('span:i76'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i76" onclick="swap_content('span:i76'); return false;"><b>COMBINATORIAL_DIM</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i76" class="foldit"><div class="descr"><p> Combinatorial dimension.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i79" onclick="swap_content('span:i79'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i79" onclick="swap_content('span:i79'); return false;"><b>COMPLETE</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i79" class="foldit"><div class="descr"><p> The polyhedral fan is complete if its suport is the whole space.</p><p> Due to undecidability issues this is checked heuristically only.
+ See the remarks on <a href="topaz.html#i127" onclick="unfold('span:i127');">SPHERE</a> for details.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i82" onclick="swap_content('span:i82'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i82" onclick="swap_content('span:i82'); return false;"><b>DUAL_GRAPH</b>:
+		</a><a href="graph.html#i15" onclick="unfold('span:i15');">graph::Graph&lt;Undirected&gt;</a><br /><div style="display: inline" id="span:i82" class="foldit"><div class="descr"><p> The graph whose nodes are the maximal cones which
+ are connected if they share a common facet.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i75" onclick="swap_content('span:i75'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i75" onclick="swap_content('span:i75'); return false;"><b>F2_VECTOR</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Integer, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i75" class="foldit"><div class="descr"><p> f_ik is the number of incident pairs of i-dimensional cones and k-dimensional cones; the main diagonal contains the <a href="#i85" onclick="unfold('span:i85');">F_VECTOR</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i85" onclick="swap_content('span:i85'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i85" onclick="swap_content('span:i85'); return false;"><b>F_VECTOR</b>:
+		</a><a href="common.html#i13" onclick="unfold('span:i13');">common::Vector&lt;Integer&gt;</a><br /><div style="display: inline" id="span:i85" class="foldit"><div class="descr"><p> f_k is the number of k-dimensional cones.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i83" onclick="swap_content('span:i83'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i83" onclick="swap_content('span:i83'); return false;"><b>GRAPH</b>:
+		</a><a href="graph.html#i15" onclick="unfold('span:i15');">graph::Graph&lt;Undirected&gt;</a><br /><div style="display: inline" id="span:i83" class="foldit"><div class="descr"><p> The graph of the cone intersected with a sphere, that is,
+ the vertices are the rays which are connected if they are
+ contained in a common two-dimensional cone.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i80" onclick="swap_content('span:i80'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i80" onclick="swap_content('span:i80'); return false;"><b>HASSE_DIAGRAM</b>:
+		</a><a href="graph.html#i12" onclick="unfold('span:i12');">graph::FaceLattice</a><br /><div style="display: inline" id="span:i80" class="foldit"><div class="descr"><p> The poset of subcones of the polyhedral fan organized as a directed graph.
+ Each node corresponds to some proper subcone of the fan.
+ The nodes corresponding to the rays and maximal cones appear in the same order
+ as the elements of <a href="#i89" onclick="unfold('span:i89');">RAYS</a> and <a href="#i98" onclick="unfold('span:i98');">MAXIMAL_CONES</a> properties.</p><p> One special node represents the origin.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i77" onclick="swap_content('span:i77'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i77" onclick="swap_content('span:i77'); return false;"><b>MAXIMAL_CONES_COMBINATORIAL_DIMS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i77" class="foldit"><div class="descr"><p> The combinatorial dimensions of the maximal cones.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i78" onclick="swap_content('span:i78'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i78" onclick="swap_content('span:i78'); return false;"><b>MAXIMAL_CONES_INCIDENCES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;IncidenceMatrix&lt;NonSymmetric&gt;&gt;</a><br /><div style="display: inline" id="span:i78" class="foldit"><div class="descr"><p> Array of incidence matrices of all maximal cones</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i81" onclick="swap_content('span:i81'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i81" onclick="swap_content('span:i81'); return false;"><b>PURE</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i81" class="foldit"><div class="descr"><p> The polyhedral fan is pure if all maximal cones are of the same dimension.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i84" onclick="swap_content('span:i84'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i84" onclick="swap_content('span:i84'); return false;"><b>SIMPLICIAL</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i84" class="foldit"><div class="descr"><p> The polyhedral fan is simplicial if all maximal cones are simplicial.</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i52" onclick="swap_content('span:i52'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i52" onclick="swap_content('span:i52'); return false;"><span class="category">Topology</span></a></h3></div><div style="display: inline" id="span:i52" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i73" onclick="swap_content('span:i73'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i73" onclick="swap_content('span:i73'); return false;"><b>HOMOLOGY</b>:
+		</a><a href="topaz.html#i28" onclick="unfold('span:i28');">topaz::Array&lt;HomologyGroup&gt;</a><br /><div style="display: inline" id="span:i73" class="foldit"><div class="descr"><p> The homology of the intersection of the fan with the unit sphere.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i72" onclick="swap_content('span:i72'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i72" onclick="swap_content('span:i72'); return false;"><b>INTERSECTION_COMPLEX</b>:
+		</a><a href="topaz.html#i17" onclick="unfold('span:i17');">topaz::SimplicialComplex</a><br /><div style="display: inline" id="span:i72" class="foldit"><div class="descr"><p> If the fan is <a href="#i84" onclick="unfold('span:i84');">SIMPLICIAL</a> the simplicial complex obtained by intersection
+ the fan with the unit sphere.
+ If the fan is not <a href="#i84" onclick="unfold('span:i84');">SIMPLICIAL</a> the crosscut complex of the insersection.</p></div></div></div></div></li></ul></div></div></div></li></ul><h4>User Methods of PolyhedralFan</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i51" onclick="swap_content('span:i51'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i51" onclick="swap_content('span:i51'); return false;"><b>cone</b></a>
+			()  
+
+			<div style="display: inline" id="span:i51" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Gives the ith maximal cone.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i50" onclick="swap_content('span:i50'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i50" onclick="swap_content('span:i50'); return false;"><span class="category">Basic properties</span></a></h3></div><div style="display: inline" id="span:i50" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i71" onclick="swap_content('span:i71'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i71" onclick="swap_content('span:i71'); return false;"><b>AMBIENT_DIM</b></a>
+			()  
+
+			<div style="display: inline" id="span:i71" class="foldit"><br /><div class="descr_func"><div class="descr"><p> returns the dimension of the ambient space</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i70" onclick="swap_content('span:i70'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i70" onclick="swap_content('span:i70'); return false;"><b>DIM</b></a>
+			()  
+
+			<div style="display: inline" id="span:i70" class="foldit"><br /><div class="descr_func"><div class="descr"><p> returns the dimension of the linear space spanned by the fan</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i69" onclick="swap_content('span:i69'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i69" onclick="swap_content('span:i69'); return false;"><b>MAXIMAL_CONES_DIMS</b></a>
+			()  
+
+			<div style="display: inline" id="span:i69" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The dimensions of the maximal cones.</p></div></div><div class="level3"></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i49" onclick="swap_content('span:i49'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i49" onclick="swap_content('span:i49'); return false;"><span class="category">Visualization</span></a></h3></div><div style="display: inline" id="span:i49" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i68" onclick="swap_content('span:i68'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i68" onclick="swap_content('span:i68'); return false;"><b>VISUAL</b></a>
+			()  
+
+			<div style="display: inline" id="span:i68" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Visualizes the fan, intersected with the unit ball.
+ return: Visual::PolyhedralFan</p><p> <strong>FIXME:</strong> use combinatorics via MAXIMAL_CONES_FACETS</p></div></div><div class="level3"><h5>Options</h5><table class="args"><tr><td>option list:</td><td>Visual::Polygons::decorations</td></tr></table></div></div></div></div></li></ul></div></div></div></li></ul><h4>Permutations of PolyhedralFan</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i53" onclick="swap_content('span:i53'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i53" onclick="swap_content('span:i53'); return false;"><b>ConesPerm</b></a><div style="display: inline" id="span:i53" class="foldit"><div class="undoc"><p>UNDOCUMENTED</p></div><h4>Properties of ConesPerm</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i135" onclick="swap_content('span:i135'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i135" onclick="swap_content('span:i135'); return false;"><b>PERMUTATION</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i135" class="foldit"><div class="descr"><p> transforming <a href="#i98" onclick="unfold('span:i98');">MAXIMAL_CONES</a> from this into basic object</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i56" onclick="swap_content('span:i56'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i56" onclick="swap_content('span:i56'); return false;"><b>RaysPerm</b></a><div style="display: inline" id="span:i56" class="foldit"><div class="undoc"><p>UNDOCUMENTED</p></div><h4>Properties of RaysPerm</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i136" onclick="swap_content('span:i136'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i136" onclick="swap_content('span:i136'); return false;"><b>PERMUTATION</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i136" class="foldit"><div class="descr"><p> transforming <a href="#i89" onclick="unfold('span:i89');">RAYS</a> from this into basic object</p></div></div></div></div></li></ul></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i8" onclick="swap_content('span:i8'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i8" onclick="swap_content('span:i8'); return false;"><span class="object">PolyhedralFan&lt;Rational&gt;</span></a></h3></div><div style="display: inline" id="span:i8" class="foldit"><b>derived from: </b><a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a><br /><div class="level3"></div><h4>Properties of PolyhedralFan&lt;Rational&gt;</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i28" onclick="swap_content('span:i28'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i28" onclick="swap_content('span:i28'); return false;"><span class="category">Toric Varieties</span></a></h3></div><div style="display: inline" id="span:i28" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i64" onclick="swap_content('span:i64'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i64" onclick="swap_content('span:i64'); return false;"><b>GORENSTEIN</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i64" class="foldit"><div class="descr"><p> A fan is <a href="#i64" onclick="unfold('span:i64');">GORENSTEIN</a> if it is <a href="#i62" onclick="unfold('span:i62');">Q_GORENSTEIN</a> with <a href="#i61" onclick="unfold('span:i61');">Q_GORENSTEIN_INDEX</a> equal to one</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i62" onclick="swap_content('span:i62'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i62" onclick="swap_content('span:i62'); return false;"><b>Q_GORENSTEIN</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i62" class="foldit"><div class="descr"><p> A fan is <a href="#i62" onclick="unfold('span:i62');">Q_GORENSTEIN</a> if each maximal cone is a <a href="polytope.html#i34" onclick="unfold('span:i34');">polytope::Cone&lt;Rational&gt;::Q_GORENSTEIN_CONE</a></p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i61" onclick="swap_content('span:i61'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i61" onclick="swap_content('span:i61'); return false;"><b>Q_GORENSTEIN_INDEX</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i61" class="foldit"><div class="descr"><p> If a fan is <a href="#i62" onclick="unfold('span:i62');">Q_GORENSTEIN</a>, then its <a href="#i61" onclick="unfold('span:i61');">Q_GORENSTEIN_INDEX</a> is the least common multiple of the Q-Gorenstein indices of its maximal cones. Otherwise <a href="#i61" onclick="unfold('span:i61');">Q_GORENSTEIN_INDEX</a> is undefined.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i63" onclick="swap_content('span:i63'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i63" onclick="swap_content('span:i63'); return false;"><b>SMOOTH_FAN</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i63" class="foldit"><div class="descr"><p> A fan is smooth if all cones of the fan are smooth.</p></div></div></div></div></li></ul></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i11" onclick="swap_content('span:i11'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i11" onclick="swap_content('span:i11'); return false;"><span class="object">SymmetricFan</span></a></h3></div><div style="display: inline" id="span:i11" class="foldit"><div class="descr"><p> A <a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a> with a symmetry group acting on the coordinates.</p></div><b>derived from: </b><a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a><br /><div class="level3"></div><h4>Properties of SymmetricFan</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i59" onclick="swap_content('span:i59'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i59" onclick="swap_content('span:i59'); return false;"><span class="category">Basic properties</span></a></h3></div><div style="display: inline" id="span:i59" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i128" onclick="swap_content('span:i128'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i128" onclick="swap_content('span:i128'); return false;"><b>CONES_ORBIT_SIZES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Array&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i128" class="foldit"><div class="descr"><p> Number of <a href="#i125" onclick="unfold('span:i125');">CONES_REPS</a> in each orbit.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i125" onclick="swap_content('span:i125'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i125" onclick="swap_content('span:i125'); return false;"><b>CONES_REPS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Array&lt;Set&lt;Int&gt;&gt;&gt;</a><br /><div style="display: inline" id="span:i125" class="foldit"><div class="descr"><p> List of all cones of all dimensions of the fan, one from each orbit.  Indices refer to <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i127" onclick="swap_content('span:i127'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i127" onclick="swap_content('span:i127'); return false;"><b>INPUT_CONES_REPS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i127" class="foldit"><div class="descr"><p> Maybe redundant list of not necessarily maximal cones, one from each orbit. 
+ Indices refer to <a href="#i100" onclick="unfold('span:i100');">INPUT_RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i130" onclick="swap_content('span:i130'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i130" onclick="swap_content('span:i130'); return false;"><b>MAXIMAL_CONES_IN_ORBITS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i130" class="foldit"><div class="descr"><p> Tells which maximal cone is in the orbit of which representative, indices refers to rows of <a href="#i98" onclick="unfold('span:i98');">MAXIMAL_CONES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i123" onclick="swap_content('span:i123'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i123" onclick="swap_content('span:i123'); return false;"><b>MAXIMAL_CONES_ORBIT_SIZES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i123" class="foldit"><div class="descr"><p> Number of <a href="#i121" onclick="unfold('span:i121');">MAXIMAL_CONES_REPS</a> in each orbit.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i121" onclick="swap_content('span:i121'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i121" onclick="swap_content('span:i121'); return false;"><b>MAXIMAL_CONES_REPS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i121" class="foldit"><div class="descr"><p> Non redundant list of maximal cones, one from each orbit.  Indices refer to <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i131" onclick="swap_content('span:i131'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i131" onclick="swap_content('span:i131'); return false;"><b>MAXIMAL_CONES_REPS_DIMS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i131" class="foldit"><div class="descr"><p> The dimensions of <a href="#i121" onclick="unfold('span:i121');">MAXIMAL_CONES_REPS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i115" onclick="swap_content('span:i115'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i115" onclick="swap_content('span:i115'); return false;"><b>MAXIMAL_CONES_REPS_FACETS</b>:
+		</a><a href="common.html#i51" onclick="unfold('span:i51');">common::SparseMatrix&lt;Int, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i115" class="foldit"><div class="descr"><p> Tells for each maximal cone representative what are its facets.
+ A negative number means that the corresponding row of
+ <a href="#i119" onclick="unfold('span:i119');">REPS_FACET_NORMALS</a> has to be negated.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i129" onclick="swap_content('span:i129'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i129" onclick="swap_content('span:i129'); return false;"><b>MAXIMAL_CONES_REPS_LINEAR_SPAN_NORMALS</b>:
+		</a><a href="common.html#i27" onclick="unfold('span:i27');">common::IncidenceMatrix&lt;NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i129" class="foldit"><div class="descr"><p> Tells for each maximal cone representative what is its linear span.
+ Indices refer to <a href="#i116" onclick="unfold('span:i116');">REPS_LINEAR_SPAN_NORMALS</a>.
+ Rows correspond to <a href="#i115" onclick="unfold('span:i115');">MAXIMAL_CONES_REPS_FACETS</a></p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i122" onclick="swap_content('span:i122'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i122" onclick="swap_content('span:i122'); return false;"><b>N_MAXIMAL_CONE_ORBITS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i122" class="foldit"><div class="descr"><p> Number of orbits of <a href="#i98" onclick="unfold('span:i98');">MAXIMAL_CONES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i126" onclick="swap_content('span:i126'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i126" onclick="swap_content('span:i126'); return false;"><b>N_RAY_ORBITS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i126" class="foldit"><div class="descr"><p> Number of orbits of <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i124" onclick="swap_content('span:i124'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i124" onclick="swap_content('span:i124'); return false;"><b>N_SYMMETRIES</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i124" class="foldit"><div class="descr"><p> Number of elements of the symmetry group.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i112" onclick="swap_content('span:i112'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i112" onclick="swap_content('span:i112'); return false;"><b>RAYS_IMAGES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Array&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i112" class="foldit"><div class="descr"><p> Each row contains the image of all <a href="#i89" onclick="unfold('span:i89');">RAYS</a> under one element of the symmetry group.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i120" onclick="swap_content('span:i120'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i120" onclick="swap_content('span:i120'); return false;"><b>RAYS_IN_ORBITS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i120" class="foldit"><div class="descr"><p> Tells which ray is in the orbit of which representative, indices refers to rows of <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i111" onclick="swap_content('span:i111'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i111" onclick="swap_content('span:i111'); return false;"><b>RAYS_ORBIT_SIZES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i111" class="foldit"><div class="descr"><p> Number of elements of each orbit of <a href="#i89" onclick="unfold('span:i89');">RAYS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i117" onclick="swap_content('span:i117'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i117" onclick="swap_content('span:i117'); return false;"><b>RAYS_REPS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i117" class="foldit"><div class="descr"><p> One ray from each orbit. Non-redundant.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i114" onclick="swap_content('span:i114'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i114" onclick="swap_content('span:i114'); return false;"><b>RAYS_REPS_LABELS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;String&gt;</a><br /><div style="display: inline" id="span:i114" class="foldit"><div class="descr"><p> Unique names assigned to the <a href="#i117" onclick="unfold('span:i117');">RAYS_REPS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i119" onclick="swap_content('span:i119'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i119" onclick="swap_content('span:i119'); return false;"><b>REPS_FACET_NORMALS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i119" class="foldit"><div class="descr"><p> The possible facet normals of all maximal cone representatives.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i116" onclick="swap_content('span:i116'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i116" onclick="swap_content('span:i116'); return false;"><b>REPS_LINEAR_SPAN_NORMALS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i116" class="foldit"><div class="descr"><p> The possible linear span normals of all maximal cone representatives.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i113" onclick="swap_content('span:i113'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i113" onclick="swap_content('span:i113'); return false;"><b>SYMMETRY_GENERATORS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Array&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i113" class="foldit"><div class="descr"><p> Each element of the array is a generator of the subgroup of the symmetric group
+ acting on the coordintates. Each generator is represented by an Array whose ith
+ entry is the image of ith coordinate.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i118" onclick="swap_content('span:i118'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i118" onclick="swap_content('span:i118'); return false;"><b>SYMMETRY_GROUP</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Array&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i118" class="foldit"><div class="descr"><p> Each element of the array is an element of the symmetry group.</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i58" onclick="swap_content('span:i58'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i58" onclick="swap_content('span:i58'); return false;"><span class="category">Combinatorics</span></a></h3></div><div style="display: inline" id="span:i58" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i110" onclick="swap_content('span:i110'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i110" onclick="swap_content('span:i110'); return false;"><b>ORBITS_F_VECTOR</b>:
+		</a><a href="common.html#i13" onclick="unfold('span:i13');">common::Vector&lt;Integer&gt;</a><br /><div style="display: inline" id="span:i110" class="foldit"><div class="descr"><p> f_k is the number of k-dimensional cones up to symmetry.</p></div></div></div></div></li></ul></div></div></div></li></ul><h4>User Methods of SymmetricFan</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i57" onclick="swap_content('span:i57'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i57" onclick="swap_content('span:i57'); return false;"><b>cone_representative</b></a>
+			()  
+
+			<div style="display: inline" id="span:i57" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Gives the ith maximal cone representative.</p></div></div><div class="level3"></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i27" onclick="swap_content('span:i27'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i27" onclick="swap_content('span:i27'); return false;"><span class="object">TropicalVariety</span></a></h3></div><div style="display: inline" id="span:i27" class="foldit"><b>Category: </b>Tropical varieties<br /><div class="descr"><p> the tropical variety defined by a fan</p></div><b>derived from: </b><a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a><br /><div class="level3"></div><h4>Properties of TropicalVariety</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i132" onclick="swap_content('span:i132'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i132" onclick="swap_content('span:i132'); return false;"><span class="category">Tropical varieties</span></a></h3></div><div style="display: inline" id="span:i132" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i137" onclick="swap_content('span:i137'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i137" onclick="swap_content('span:i137'); return false;"><b>MULTIPLICITIES</b>:
+		</a><a href="common.html#i13" onclick="unfold('span:i13');">common::Vector&lt;Scalar&gt;</a><br /><div style="display: inline" id="span:i137" class="foldit"><div class="descr"><p> Multiplicities of the <a href="#i98" onclick="unfold('span:i98');">MAXIMAL_CONES</a>.</p></div></div></div></div></li></ul></div></div></div></li></ul></div></div></div></li></ul></div><div class="level2"><h2>User Functions</h2><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i4" onclick="swap_content('span:i4'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i4" onclick="swap_content('span:i4'); return false;"><b>common_refinement</b></a>
+			(f1, f2)  
+
+			
+				→ PolyhedralFan<div style="display: inline" id="span:i4" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Computes the common refinement of two complete fans.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a></td><td class="param">f1</td><td></td></tr><tr><td><a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a></td><td class="param">f2</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i5" onclick="swap_content('span:i5'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i5" onclick="swap_content('span:i5'); return false;"><span class="category">Consistency check</span></a></h3></div><div style="display: inline" id="span:i5" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i16" onclick="swap_content('span:i16'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i16" onclick="swap_content('span:i16'); return false;"><b>check_fan</b></a>
+			(rays, cones)  
+
+			
+				→ PolyhedralFan<div style="display: inline" id="span:i16" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Checks whether a given set of <em class="param">rays</em> together with a list <em class="param">cones</em>
+ defines a polyhedral fan.
+ If this is the case, the ouput is the <a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a> defined by <em class="param">rays</em>
+ as <a href="#i100" onclick="unfold('span:i100');">INPUT_RAYS</a>, <em class="param">cones</em> as <a href="#i94" onclick="unfold('span:i94');">INPUT_CONES</a>, <em class="param">lineality_space</em> as
+ <a href="#i97" onclick="unfold('span:i97');">LINEALITY_SPACE</a> if this option is given.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i31" onclick="unfold('span:i31');">Matrix</a></td><td class="param">rays</td><td></td></tr><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt; Set&lt;int&gt; &gt;</a></td><td class="param">cones</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i31" onclick="unfold('span:i31');">Matrix</a></td><td class="param">lineality_space</td><td><div class="descr"><div>Common lineality space for the cones.</div></div></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">verbose</td><td><div class="descr"><div>prints information about the check.</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i15" onclick="swap_content('span:i15'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i15" onclick="swap_content('span:i15'); return false;"><b>check_fan_objects</b></a>
+			(C ...)  
+
+			
+				→ PolyhedralFan<div style="display: inline" id="span:i15" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Checks whether the <a href="polytope.html#i34" onclick="unfold('span:i34');">polytope::Cone</a> objects form a polyhedral fan.
+ If this is the case, returns that <a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="polytope.html#i34" onclick="unfold('span:i34');">Cone</a></td><td class="param">C ...</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">verbose</td><td><div class="descr"><div>prints information about the check.</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i10" onclick="unfold('span:i10');">PolyhedralFan</a></td><td></td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i6" onclick="swap_content('span:i6'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i6" onclick="swap_content('span:i6'); return false;"><span class="category">Constructing a fan</span></a></h3></div><div style="display: inline" id="span:i6" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i18" onclick="swap_content('span:i18'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i18" onclick="swap_content('span:i18'); return false;"><b>hyperplane_arrangement</b></a>
+			(H)  
+
+			<div style="display: inline" id="span:i18" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Compute the fan given by a bunch of hyperplanes <em class="param">H</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i31" onclick="unfold('span:i31');">Matrix</a></td><td class="param">H</td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i17" onclick="swap_content('span:i17'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i17" onclick="swap_content('span:i17'); return false;"><b>normal_fan</b></a>
+			(p)  
+
+			<div style="display: inline" id="span:i17" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Computes the normal fan of <em class="param">p</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="polytope.html#i38" onclick="unfold('span:i38');">Polytope</a></td><td class="param">p</td><td></td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i7" onclick="swap_content('span:i7'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i7" onclick="swap_content('span:i7'); return false;"><span class="category">Secondary Fans</span></a></h3></div><div style="display: inline" id="span:i7" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i19" onclick="swap_content('span:i19'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i19" onclick="swap_content('span:i19'); return false;"><b>secondary_fan</b></a>
+			(M)  
+
+			<div style="display: inline" id="span:i19" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Call <a href="http://polymake.org//external_software#gfan" onclick="unfold('span:gfan');">wiki:external_software#gfan</a> to compute the secondary cone of a vector configuration.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i31" onclick="unfold('span:i31');">Matrix</a></td><td class="param">M</td><td><div class="descr"><div>whose rows are the vectors in the configuration</div></div></td></tr></table></div></div></div></div></li></ul></div></div></div></li></ul></div></div>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>

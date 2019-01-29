@@ -1,0 +1,1106 @@
+<div xmlns:html="http://www.w3.org/1999/xhtml" xmlns:pm="http://www.polymake.de/ns/docs#3" id="content">
+  <h1>application: group</h1>
+  <div class="descr">
+    <p> The application group provides basic functionality for working with permutation
+ groups. An object 'Group' is defined by a list of generators describing the 
+ permutation of some indices. 
+ The object 'GroupOfCone' encapsulates symmetry information of a cone.
+ It can act on the indices of rays (DOMAIN=&gt;1), of facets(2), or on coordinates(3).</p>
+  </div>
+  <br/>
+  <b>imports from: </b>
+  <a href="common.html">common</a>
+  <br/>
+  <div class="level2">
+    <h2>
+      <b>Objects</b>
+    </h2>
+    <ul class="unfoldable">
+      <li>
+        <div class="li">
+          <div class="icon" id="icon:i11" onclick="swap_content('span:i11'); return false;">
+		 	
+	</div>
+          <div class="unfoldable">
+            <div class="object">
+              <h3>
+                <a href="#" class="javalink" id="i11" onclick="swap_content('span:i11'); return false;">
+                  <span class="object">Group</span>
+                </a>
+              </h3>
+            </div>
+            <div style="display: inline" id="span:i11" class="foldit">
+              <div class="descr">
+                <p> A finite permutation group.</p>
+              </div>
+              <div class="level3"/>
+              <h4>Properties of Group</h4>
+              <ul class="unfoldable">
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i33" onclick="swap_content('span:i33'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <a href="#" class="javalink" id="i33" onclick="swap_content('span:i33'); return false;"><b>BASE</b>:
+		</a>
+                      <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a>
+                      <br/>
+                      <div style="display: inline" id="span:i33" class="foldit">
+                        <div class="descr">
+                          <p> A base for <a href="#i39" onclick="unfold('span:i39');">STRONG_GENERATORS</a>.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i37" onclick="swap_content('span:i37'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <a href="#" class="javalink" id="i37" onclick="swap_content('span:i37'); return false;"><b>DEGREE</b>:
+		</a>
+                      <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                      <br/>
+                      <div style="display: inline" id="span:i37" class="foldit">
+                        <div class="descr">
+                          <p> The degree of the permutation representation.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i36" onclick="swap_content('span:i36'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <a href="#" class="javalink" id="i36" onclick="swap_content('span:i36'); return false;"><b>GENERATORS</b>:
+		</a>
+                      <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Array&lt;Int&gt;&gt;</a>
+                      <br/>
+                      <div style="display: inline" id="span:i36" class="foldit">
+                        <div class="descr">
+                          <p> Some generating set for the group. All generators must have 
+ the same length <a href="#i37" onclick="unfold('span:i37');">DEGREE</a>. 
+ FIXME: Concrete description as second row of permutation representation</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i35" onclick="swap_content('span:i35'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <a href="#" class="javalink" id="i35" onclick="swap_content('span:i35'); return false;"><b>N_STRONG_GENERATORS</b>:
+		</a>
+                      <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                      <br/>
+                      <div style="display: inline" id="span:i35" class="foldit">
+                        <div class="descr">
+                          <p> The number of strong generators.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i32" onclick="swap_content('span:i32'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <a href="#" class="javalink" id="i32" onclick="swap_content('span:i32'); return false;"><b>ORDER</b>:
+		</a>
+                      <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                      <br/>
+                      <div style="display: inline" id="span:i32" class="foldit">
+                        <div class="descr">
+                          <p> The order of the group.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i39" onclick="swap_content('span:i39'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <a href="#" class="javalink" id="i39" onclick="swap_content('span:i39'); return false;"><b>STRONG_GENERATORS</b>:
+		</a>
+                      <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Array&lt;Int&gt;&gt;</a>
+                      <br/>
+                      <div style="display: inline" id="span:i39" class="foldit">
+                        <div class="descr">
+                          <p> Strong generating set with respect to <a href="#i33" onclick="unfold('span:i33');">BASE</a>.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i34" onclick="swap_content('span:i34'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <a href="#" class="javalink" id="i34" onclick="swap_content('span:i34'); return false;"><b>TRANSVERSALS</b>:
+		</a>
+                      <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Array&lt;Int&gt;&gt;</a>
+                      <br/>
+                      <div style="display: inline" id="span:i34" class="foldit">
+                        <div class="descr">
+                          <p> Transversals along the stabilizer chain. </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i38" onclick="swap_content('span:i38'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <a href="#" class="javalink" id="i38" onclick="swap_content('span:i38'); return false;"><b>TRANSVERSAL_SIZES</b>:
+		</a>
+                      <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a>
+                      <br/>
+                      <div style="display: inline" id="span:i38" class="foldit">
+                        <div class="descr">
+                          <p> The number of group elements per transversal.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="li">
+          <div class="icon" id="icon:i10" onclick="swap_content('span:i10'); return false;">
+		 	
+	</div>
+          <div class="unfoldable">
+            <div class="object">
+              <h3>
+                <a href="#" class="javalink" id="i10" onclick="swap_content('span:i10'); return false;">
+                  <span class="object">GroupOfCone</span>
+                </a>
+              </h3>
+            </div>
+            <div style="display: inline" id="span:i10" class="foldit">
+              <div class="undoc">
+                <p>UNDOCUMENTED</p>
+              </div>
+              <b>derived from: </b>
+              <a href="#i11" onclick="unfold('span:i11');">Group</a>
+              <br/>
+              <div class="level3"/>
+              <h4>Properties of GroupOfCone</h4>
+              <ul class="unfoldable">
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i31" onclick="swap_content('span:i31'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <div class="category">
+                        <h3>
+                          <a href="#" class="javalink" id="i31" onclick="swap_content('span:i31'); return false;">
+                            <span class="category">Symmetric Cones</span>
+                          </a>
+                        </h3>
+                      </div>
+                      <div style="display: inline" id="span:i31" class="foldit">
+                        <ul>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i65" onclick="swap_content('span:i65'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i65" onclick="swap_content('span:i65'); return false;"><b>REPRESENTATIVE_FACETS</b>:
+		</a>
+                                <a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i65" class="foldit">
+                                  <div class="descr">
+                                    <p> Representatives for the orbits of facets of the cone under this group action.
+ No redundancies are allowed.
+ FIXME: Could cause problems since representatives are not unique! 
+        The order should correspond to the order of the orbits of facets!</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i64" onclick="swap_content('span:i64'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i64" onclick="swap_content('span:i64'); return false;"><b>REPRESENTATIVE_LINEAR_SPAN</b>:
+		</a>
+                                <a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i64" class="foldit">
+                                  <div class="descr">
+                                    <p> Representatives for the orbits of the linear span of the cone under this group action.
+ No redundancies are allowed.
+ FIXME: Could cause problems since representatives are not unique! 
+        The order should correspond to the order of the orbits of facets!</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i63" onclick="swap_content('span:i63'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i63" onclick="swap_content('span:i63'); return false;"><b>REPRESENTATIVE_RAYS</b>:
+		</a>
+                                <a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i63" class="foldit">
+                                  <div class="descr">
+                                    <p> Representatives for the orbits of rays of the cone under this group action.
+ No redundancies are allowed.
+ FIXME: Could cause problems since representatives are not unique! How to do canonicalization?
+        The order should correspond to the order of the orbits of rays!</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i30" onclick="swap_content('span:i30'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <div class="category">
+                        <h3>
+                          <a href="#" class="javalink" id="i30" onclick="swap_content('span:i30'); return false;">
+                            <span class="category">Symmetric cones</span>
+                          </a>
+                        </h3>
+                      </div>
+                      <div style="display: inline" id="span:i30" class="foldit">
+                        <ul>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i53" onclick="swap_content('span:i53'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i53" onclick="swap_content('span:i53'); return false;"><b>COORDINATES_IN_ORBITS</b>:
+		</a>
+                                <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i53" class="foldit">
+                                  <div class="descr">
+                                    <p> An array that contains a set of indices (of rays) for each orbit of coordinates. </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i59" onclick="swap_content('span:i59'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i59" onclick="swap_content('span:i59'); return false;"><b>DOMAIN</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i59" class="foldit">
+                                  <div class="descr">
+                                    <p> Indicates on which domain the group action is defined, see Enum defined in
+ 'apps/polytope/rules/permlib.rules' . 
+ OnRays=1: action on the (indices of the) rays
+ OnFacets=2: action on the facets
+ OnCoords=3: action on the coordinates </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i48" onclick="swap_content('span:i48'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i48" onclick="swap_content('span:i48'); return false;"><b>FACETS_IN_ORBITS</b>:
+		</a>
+                                <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i48" class="foldit">
+                                  <div class="descr">
+                                    <p> An array that contains a set of indices (of facets) for each orbit of facets. 
+ The indices of the facets correspond to their indices in the polymake object.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i55" onclick="swap_content('span:i55'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i55" onclick="swap_content('span:i55'); return false;"><b>INEQUALITIES_IN_ORBITS</b>:
+		</a>
+                                <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i55" class="foldit">
+                                  <div class="descr">
+                                    <p> An array that contains a set of indices (of inequalities) for each orbit of inequalities. 
+ The indices of the inequalities correspond to their indices in the polymake object.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i61" onclick="swap_content('span:i61'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i61" onclick="swap_content('span:i61'); return false;"><b>INPUT_RAYS_IN_ORBITS</b>:
+		</a>
+                                <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i61" class="foldit">
+                                  <div class="descr">
+                                    <p> An array that contains a set of indices (of input rays) for each orbit of rays. 
+ The indices of the input rays correspond to their indices in the polymake object.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i52" onclick="swap_content('span:i52'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i52" onclick="swap_content('span:i52'); return false;"><b>N_ORBITS_OF_COORDINATES</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i52" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of orbits of coordinates.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i51" onclick="swap_content('span:i51'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i51" onclick="swap_content('span:i51'); return false;"><b>N_ORBITS_OF_FACETS</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i51" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of orbits of facets.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i58" onclick="swap_content('span:i58'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i58" onclick="swap_content('span:i58'); return false;"><b>N_ORBITS_OF_INEQUALITIES</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i58" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of orbits of inequalities.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i56" onclick="swap_content('span:i56'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i56" onclick="swap_content('span:i56'); return false;"><b>N_ORBITS_OF_INPUT_RAYS</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i56" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of orbits of input rays.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i49" onclick="swap_content('span:i49'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i49" onclick="swap_content('span:i49'); return false;"><b>N_ORBITS_OF_RAYS</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i49" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of orbits of rays.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i54" onclick="swap_content('span:i54'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i54" onclick="swap_content('span:i54'); return false;"><b>N_REPRESENTATIVE_FACETS</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i54" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of facet representatives.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i60" onclick="swap_content('span:i60'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i60" onclick="swap_content('span:i60'); return false;"><b>N_REPRESENTATIVE_RAYS</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i60" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of ray representatives.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i50" onclick="swap_content('span:i50'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i50" onclick="swap_content('span:i50'); return false;"><b>RAYS_IN_ORBITS</b>:
+		</a>
+                                <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i50" class="foldit">
+                                  <div class="descr">
+                                    <p> An array that contains a set of indices (of rays) for each orbit of rays. 
+ The indices of the rays correspond to their indices in the polymake object.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i62" onclick="swap_content('span:i62'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i62" onclick="swap_content('span:i62'); return false;"><b>SYMMETRIC_FACETS</b>:
+		</a>
+                                <a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i62" class="foldit">
+                                  <div class="descr">
+                                    <p> The symmetrized facets of the cone. Same order as in the <a href="#" onclick="unfold('span:');" class="invalid">FACETS</a>-section.
+ Explanation: The symmetry group of a cone also act on the facets.
+   If the cone is not full-dimensional, however, the facets may appear
+   unsymmetric. Nevertheless, there always exists some symmetric facet description.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i57" onclick="swap_content('span:i57'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i57" onclick="swap_content('span:i57'); return false;"><b>SYMMETRIC_RAYS</b>:
+		</a>
+                                <a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i57" class="foldit">
+                                  <div class="descr">
+                                    <p> The symmetrized rays of the cone. Same order as in the <a href="#" onclick="unfold('span:');" class="invalid">RAYS</a>-section.
+ Explanation: The symmetry group of a cone also act on the rays.
+   If the cone has a non-trivial lineality space, however, the rays may appear
+   unsymmetric. Nevertheless, there always exists some symmetric ray description.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="li">
+          <div class="icon" id="icon:i9" onclick="swap_content('span:i9'); return false;">
+		 	
+	</div>
+          <div class="unfoldable">
+            <div class="object">
+              <h3>
+                <a href="#" class="javalink" id="i9" onclick="swap_content('span:i9'); return false;">
+                  <span class="object">GroupOfPolytope</span>
+                </a>
+              </h3>
+            </div>
+            <div style="display: inline" id="span:i9" class="foldit">
+              <div class="undoc">
+                <p>UNDOCUMENTED</p>
+              </div>
+              <b>derived from: </b>
+              <a href="#i10" onclick="unfold('span:i10');">GroupOfCone</a>
+              <br/>
+              <div class="level3"/>
+              <h4>Properties of GroupOfPolytope</h4>
+              <ul class="unfoldable">
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i29" onclick="swap_content('span:i29'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable">
+                      <div class="category">
+                        <h3>
+                          <a href="#" class="javalink" id="i29" onclick="swap_content('span:i29'); return false;">
+                            <span class="category">Symmetric cones</span>
+                          </a>
+                        </h3>
+                      </div>
+                      <div style="display: inline" id="span:i29" class="foldit">
+                        <ul>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i40" onclick="swap_content('span:i40'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i40" onclick="swap_content('span:i40'); return false;"><b>N_ORBITS_OF_POINTS</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i40" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of orbits of points.
+ Alias for property <a href="#i56" onclick="unfold('span:i56');">N_ORBITS_OF_INPUT_RAYS</a>.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i41" onclick="swap_content('span:i41'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i41" onclick="swap_content('span:i41'); return false;"><b>N_ORBITS_OF_VERTICES</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i41" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of orbits of vertices.
+ Alias for property <a href="#i49" onclick="unfold('span:i49');">N_ORBITS_OF_RAYS</a>.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i42" onclick="swap_content('span:i42'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i42" onclick="swap_content('span:i42'); return false;"><b>N_REPRESENTATIVE_VERTICES</b>:
+		</a>
+                                <a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a>
+                                <br/>
+                                <div style="display: inline" id="span:i42" class="foldit">
+                                  <div class="descr">
+                                    <p> The number of vertex representatives.
+ Alias for property <a href="#i60" onclick="unfold('span:i60');">N_REPRESENTATIVE_RAYS</a>.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i43" onclick="swap_content('span:i43'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i43" onclick="swap_content('span:i43'); return false;"><b>POINTS_IN_ORBITS</b>:
+		</a>
+                                <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i43" class="foldit">
+                                  <div class="descr">
+                                    <p> An array that contains a set of indices (of points) for each orbit of points. 
+ The indices of the points correspond to their indices in the polymake object.
+ Alias for property <a href="#i61" onclick="unfold('span:i61');">INPUT_RAYS_IN_ORBITS</a>.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i47" onclick="swap_content('span:i47'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i47" onclick="swap_content('span:i47'); return false;"><b>REPRESENTATIVE_AFFINE_HULL</b>:
+		</a>
+                                <a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i47" class="foldit">
+                                  <div class="descr">
+                                    <p> Representatives for the orbits of linear span of the polytope under this group action.
+ No redundancies are allowed.
+ Alias for property <a href="#i64" onclick="unfold('span:i64');">REPRESENTATIVE_LINEAR_SPAN</a>.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i46" onclick="swap_content('span:i46'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i46" onclick="swap_content('span:i46'); return false;"><b>REPRESENTATIVE_VERTICES</b>:
+		</a>
+                                <a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i46" class="foldit">
+                                  <div class="descr">
+                                    <p> Representatives for the orbits of vertices of the polytope under this group action.
+ No redundancies are allowed.
+ Alias for property <a href="#i63" onclick="unfold('span:i63');">REPRESENTATIVE_RAYS</a>.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i45" onclick="swap_content('span:i45'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i45" onclick="swap_content('span:i45'); return false;"><b>SYMMETRIC_VERTICES</b>:
+		</a>
+                                <a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i45" class="foldit">
+                                  <div class="descr">
+                                    <p> The symmetrized vertices of the polytope. Same order as in the <a href="#" onclick="unfold('span:');" class="invalid">VERTICES</a>-section.
+ Explanation: The symmetry group of a polytope also act on the vertices.
+   If the polytope has a non-trivial lineality space, however, the vertices may appear
+   unsymmetric. Nevertheless, there always exists some symmetric vertex description.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="li">
+                              <div class="icon" id="icon:i44" onclick="swap_content('span:i44'); return false;">
+		 	
+	</div>
+                              <div class="unfoldable">
+                                <a href="#" class="javalink" id="i44" onclick="swap_content('span:i44'); return false;"><b>VERTICES_IN_ORBITS</b>:
+		</a>
+                                <a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a>
+                                <br/>
+                                <div style="display: inline" id="span:i44" class="foldit">
+                                  <div class="descr">
+                                    <p> An array that contains a set of indices (of vertices) for each orbit of vertices. 
+ The indices of the vertices correspond to their indices in the polymake object.
+ Alias for property <a href="#i50" onclick="unfold('span:i50');">RAYS_IN_ORBITS</a>.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="level2">
+    <h2>User Functions</h2>
+    <ul class="unfoldable">
+      <li>
+        <div class="li">
+          <div class="icon" id="icon:i6" onclick="swap_content('span:i6'); return false;">
+		 	
+	</div>
+          <div class="unfoldable">
+            <div class="category">
+              <h3>
+                <a href="#" class="javalink" id="i6" onclick="swap_content('span:i6'); return false;">
+                  <span class="category">Basics</span>
+                </a>
+              </h3>
+            </div>
+            <div style="display: inline" id="span:i6" class="foldit">
+              <ul>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i18" onclick="swap_content('span:i18'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i18" onclick="swap_content('span:i18'); return false;"><b>group_from_generators</b></a>
+			(gens, group)  
+
+			<div style="display: inline" id="span:i18" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes the basic properties 'base', 
+ 'strong generators', and 'transversals' 
+ and stores the result in a Group object.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array</a></td><td class="param">gens</td><td><div class="descr"><div>some generators of the group</div></div></td></tr><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td class="param">group</td><td><div class="descr"><div>to fill in the data</div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="li">
+          <div class="icon" id="icon:i8" onclick="swap_content('span:i8'); return false;">
+		 	
+	</div>
+          <div class="unfoldable">
+            <div class="category">
+              <h3>
+                <a href="#" class="javalink" id="i8" onclick="swap_content('span:i8'); return false;">
+                  <span class="category">Orbits</span>
+                </a>
+              </h3>
+            </div>
+            <div style="display: inline" id="span:i8" class="foldit">
+              <ul>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i22" onclick="swap_content('span:i22'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i22" onclick="swap_content('span:i22'); return false;"><b>are_in_same_orbit</b></a>
+			(group, vec1, vec2)  
+
+			
+				→ bool<div style="display: inline" id="span:i22" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Checks whether vector <em class="param">vec1</em> and <em class="param">vec2</em> are in the same orbit
+ with respect to the (coordinate) action of <em class="param">group</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td class="param">group</td><td><div class="descr"><div>the permutation group acting on coordinates</div></div></td></tr><tr><td><a href="common.html#i13" onclick="unfold('span:i13');">Vector</a></td><td class="param">vec1</td><td><div class="descr"><div>the first vector</div></div></td></tr><tr><td><a href="common.html#i13" onclick="unfold('span:i13');">Vector</a></td><td class="param">vec2</td><td><div class="descr"><div>the second vector</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td>bool</td><td><div class="descr"><div>true, if <em class="param">vec1</em> and <em class="param">vec2</em> are in the same orbit, false otherwise</div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i23" onclick="swap_content('span:i23'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i23" onclick="swap_content('span:i23'); return false;"><b>compute_complete_coord_act_orbit</b></a>
+			(group, mat)  
+
+			
+				→ ListReturn<div style="display: inline" id="span:i23" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes the orbit of the set of all vectors of the matrix <em class="param">mat</em>
+ under <em class="param">group</em>, which acts by permuting coordinates.
+ The set of vectors does not have to be complete.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td class="param">group</td><td><div class="descr"><div>a group of coordinate permutations</div></div></td></tr><tr><td><a href="common.html#i31" onclick="unfold('span:i31');">Matrix&lt;Scalar&gt;</a></td><td class="param">mat</td><td><div class="descr"><div>some input vectors</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td>ListReturn</td><td><div class="descr"><div>a matrix containing all generated vectors
+    , and an array containing the orbits of generated vectors.</div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i24" onclick="swap_content('span:i24'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i24" onclick="swap_content('span:i24'); return false;"><b>compute_coord_act_orbits</b></a>
+			(group, mat)  
+
+			
+				→ Array<div style="display: inline" id="span:i24" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes the orbits of the vectors (homogenized) of a matrix <em class="param">mat</em> by
+ permuting the coordinates of the vectors (skipping the homogenizing coordinate).
+ The group must act on the set of vectors. Choose the function
+ 'compute_complete_coord_act_orbit' if your set is not complete.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td class="param">group</td><td><div class="descr"><div>a group acting on the cone by permuting the coordinates</div></div></td></tr><tr><td><a href="common.html#i31" onclick="unfold('span:i31');">Matrix&lt;Scalar&gt;</a></td><td class="param">mat</td><td><div class="descr"><div>a matrix with vectors on which the group acts by 
+    coordinate permutation</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array</a></td><td><div class="descr"><div>an array of the orbits under the action on the coordinates</div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i21" onclick="swap_content('span:i21'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i21" onclick="swap_content('span:i21'); return false;"><b>compute_domain_orbits</b></a>
+			(group)  
+
+			
+				→ Array<div style="display: inline" id="span:i21" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes the orbits of the basic set under <em class="param">group</em>. </p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td class="param">group</td><td><div class="descr"><div>a group of a cone</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array</a></td><td/></tr></table></div></div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i25" onclick="swap_content('span:i25'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i25" onclick="swap_content('span:i25'); return false;"><b>compute_induced_orbits</b></a>
+			(group, inc)  
+
+			
+				→ Array<div style="display: inline" id="span:i25" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes the orbits of a set on which an action is induced.
+ The incidences between the domain elements and the elements
+ in the set are given by an incidence matrix <em class="param">inc</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td class="param">group</td><td><div class="descr"><div>a group of a cone</div></div></td></tr><tr><td><a href="common.html#i27" onclick="unfold('span:i27');">IncidenceMatrix</a></td><td class="param">inc</td><td><div class="descr"><div>the incidences between domain elements
+    and elements on which an action is induced</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array</a></td><td><div class="descr"><div>an array of the orbits of the induced action</div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="li">
+          <div class="icon" id="icon:i7" onclick="swap_content('span:i7'); return false;">
+		 	
+	</div>
+          <div class="unfoldable">
+            <div class="category">
+              <h3>
+                <a href="#" class="javalink" id="i7" onclick="swap_content('span:i7'); return false;">
+                  <span class="category">Others</span>
+                </a>
+              </h3>
+            </div>
+            <div style="display: inline" id="span:i7" class="foldit">
+              <ul>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i19" onclick="swap_content('span:i19'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i19" onclick="swap_content('span:i19'); return false;"><b>construct_cyclic_group</b></a>
+			(degree)  
+
+			
+				→ Group<div style="display: inline" id="span:i19" class="foldit"><br/><div class="descr_func"><div class="undoc">UNDOCUMENTED</div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td>int</td><td class="param">degree</td><td><div class="descr"><div>of cyclic group</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td/></tr></table></div></div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i20" onclick="swap_content('span:i20'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i20" onclick="swap_content('span:i20'); return false;"><b>construct_symmetric_group</b></a>
+			(degree)  
+
+			
+				→ Group<div style="display: inline" id="span:i20" class="foldit"><br/><div class="descr_func"><div class="undoc">UNDOCUMENTED</div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td>int</td><td class="param">degree</td><td><div class="descr"><div>of symmetric group</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td/></tr></table></div></div></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="li">
+          <div class="icon" id="icon:i4" onclick="swap_content('span:i4'); return false;">
+		 	
+	</div>
+          <div class="unfoldable">
+            <div class="category">
+              <h3>
+                <a href="#" class="javalink" id="i4" onclick="swap_content('span:i4'); return false;">
+                  <span class="category">Stabilizers</span>
+                </a>
+              </h3>
+            </div>
+            <div style="display: inline" id="span:i4" class="foldit">
+              <ul>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i13" onclick="swap_content('span:i13'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i13" onclick="swap_content('span:i13'); return false;"><b>stabilizer_of_set</b></a>
+			(group, set)  
+
+			
+				→ Group<div style="display: inline" id="span:i13" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes the subgroup of <em class="param">group</em> which stabilizes
+ the given set of indices <em class="param">set</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td class="param">group</td><td><div class="descr"><div>a permutation group</div></div></td></tr><tr><td><a href="common.html#i16" onclick="unfold('span:i16');">Set</a></td><td class="param">set</td><td><div class="descr"><div>the set to be stabilized</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td><div class="descr"><div>the stabilizer of <em class="param">set</em> w.r.t. <em class="param">group</em></div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i12" onclick="swap_content('span:i12'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i12" onclick="swap_content('span:i12'); return false;"><b>stabilizer_of_vector</b></a>
+			(group, vec)  
+
+			
+				→ Group<div style="display: inline" id="span:i12" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes the subgroup of <em class="param">group</em> which stabilizes
+ the given vector <em class="param">vec</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td class="param">group</td><td><div class="descr"><div>a permutation group</div></div></td></tr><tr><td><a href="common.html#i13" onclick="unfold('span:i13');">Vector</a></td><td class="param">vec</td><td><div class="descr"><div>the vector to be stabilized</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td><div class="descr"><div>the stabilizer of <em class="param">vec</em> w.r.t. <em class="param">group</em></div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="li">
+          <div class="icon" id="icon:i5" onclick="swap_content('span:i5'); return false;">
+		 	
+	</div>
+          <div class="unfoldable">
+            <div class="category">
+              <h3>
+                <a href="#" class="javalink" id="i5" onclick="swap_content('span:i5'); return false;">
+                  <span class="category">Utilities</span>
+                </a>
+              </h3>
+            </div>
+            <div style="display: inline" id="span:i5" class="foldit">
+              <ul>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i17" onclick="swap_content('span:i17'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i17" onclick="swap_content('span:i17'); return false;"><b>group_from_cyclic_notation0</b></a>
+			(group)  
+
+			
+				→ Group<div style="display: inline" id="span:i17" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Constructs a group from a string with generators in cyclic notation.
+ All numbers in the string are 0-based.
+ Example: "(0,2)(1,3)"</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td class="param">group</td><td><div class="descr"><div>generators in cyclic notation</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td><div class="descr"><div>\@see group_from_cyclic_notation1</div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i14" onclick="swap_content('span:i14'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i14" onclick="swap_content('span:i14'); return false;"><b>group_from_cyclic_notation1</b></a>
+			(group)  
+
+			
+				→ Group<div style="display: inline" id="span:i14" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Constructs a group from a string with generators in cyclic notation.
+ All numbers in the string are 1-based.
+ Example: "(1,3)(2,4)"</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td class="param">group</td><td><div class="descr"><div>generators in cyclic notation</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td><div class="descr"><div>\@see group_from_cyclic_notation0</div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i16" onclick="swap_content('span:i16'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i16" onclick="swap_content('span:i16'); return false;"><b>group_from_permlib_cyclic_notation</b></a>
+			(gens, degree)  
+
+			
+				→ Group<div style="display: inline" id="span:i16" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Constructs a Group from generators given in permlib cyclic notation.
+ (permlib cyc_not: indices seperated by whitespace, generators seperated by commas)</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array</a></td><td class="param">gens</td><td><div class="descr"><div>generators of the permutation group in permlib cyclic notation</div></div></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">degree</td><td><div class="descr"><div>the degree of the permutation group</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td><div class="descr"><div>the group generated by <em class="param">gens</em></div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="li">
+                    <div class="icon" id="icon:i15" onclick="swap_content('span:i15'); return false;">
+		 	
+	</div>
+                    <div class="unfoldable"><a href="#" class="javalink" id="i15" onclick="swap_content('span:i15'); return false;"><b>group_to_cyclic_notation</b></a>
+			(the)  
+
+			
+				→ String<div style="display: inline" id="span:i15" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Returns group generators in 1-based cyclic notation
+ (GAP like, not permlib like notation)</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i11" onclick="unfold('span:i11');">Group</a></td><td class="param">the</td><td><div class="descr"><div>permutation group</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td><div class="descr"><div>group generators, separated by newline and comma</div></div></td></tr></table></div></div></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

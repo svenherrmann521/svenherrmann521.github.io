@@ -1,0 +1,4 @@
+connect_database_host_fail = "Es kann keine Verbindung zum Datenbank-Host hergestellt werden."
+database_unknown = "Datenbank kann nicht gewählt werden. Die Datenbank ist unbekannt."
+execute_query_fail = "Die MySQL-Datenbankabfrage kann nicht ausgeführt werden."
+extension_fail = "MySQL-Erweiterung nicht gefunden."

@@ -1,0 +1,771 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:pm="http://www.polymake.de/ns/docs#3" xml:lang="en" lang="en">
+  <head>
+    <title>polymake documentation</title>
+    <link rel="stylesheet" href="docstyle.css" />
+    <script type="text/javascript" src="functions.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  </head>
+  <body onload="start()">
+    <div id="header_top">
+      <div class="biglogo">
+        <img src="images/pmlogobig.png" alt="polymake" />
+      </div>
+      <a href="index.html">
+        <img src="images/doclogo.png" alt="polymake wiki" class="toplogo" />
+      </a>
+    </div>
+    <div id="container">
+      <div id="page">
+        <div class="sidebar">
+          <div class="sidebox">
+            <h1>Navigation</h1>
+            <ul>
+              <li>
+                <a href="index.html#apps">applications</a>
+              </li>
+              <li>
+                <a href="core.html">core functionality</a>
+              </li>
+              <li>
+                <a href="doc_index.html">index</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div xmlns="" id="content"><h1>application: topaz</h1><div class="descr"><p> The TOPology Application Zoo deals with abstract simplicial complexes.
+ A complex is given as a list of facets.  You can ask for its global properties (<a href="#i140" onclick="unfold('span:i140');">manifold recognition</a>,
+ <a href="#i132" onclick="unfold('span:i132');">homology groups</a>, etc.),  explore the local vertex environment (<a href="#i58" onclick="unfold('span:i58');">stars</a>, <a href="#i51" onclick="unfold('span:i51');">links</a>, etc.),  and make a lot
+ of constructions.</p><p> The visualization means are constrained, as they are mostly based on the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a> (1-skeleton) of a complex.</p></div><br /><b>imports from: </b><a href="common.html">common</a>, <a href="graph.html">graph</a><br /><div class="level2"><h2><b>Objects</b></h2><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i18" onclick="swap_content('span:i18'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i18" onclick="swap_content('span:i18'); return false;"><span class="object">MixedGraph</span></a></h3></div><div style="display: inline" id="span:i18" class="foldit"><div class="descr"><p>The nodes of the mixed graph are the nodes of the primal <a href="#i160" onclick="unfold('span:i160');">GRAPH</a> and the <a href="#i159" onclick="unfold('span:i159');">DUAL_GRAPH</a>. Additional to the primal and dual edges, there is an edge between a primal and a dual node iff the primal node represents a vertex of the corresponding facet of the dual node.</p></div><b>derived from: </b><a href="graph.html#i15" onclick="unfold('span:i15');">graph::Graph&lt;Undirected&gt;</a><br /><div class="level3"></div><h4>Properties of MixedGraph</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i103" onclick="swap_content('span:i103'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i103" onclick="swap_content('span:i103'); return false;"><b>EDGE_WEIGHTS</b>:
+		</a><a href="common.html#i25" onclick="unfold('span:i25');">common::EdgeMap&lt;Undirected, Float&gt;</a><br /><div style="display: inline" id="span:i103" class="foldit"><div class="descr"><p> Associated edge labels (weights) of the MixedGraph.</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i17" onclick="swap_content('span:i17'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i17" onclick="swap_content('span:i17'); return false;"><span class="object">SimplicialComplex</span></a></h3></div><div style="display: inline" id="span:i17" class="foldit"><div class="descr"><p> An abstract simplicial complex represented by its facets.</p></div><div class="level3"></div><h4>Properties of SimplicialComplex</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i99" onclick="swap_content('span:i99'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i99" onclick="swap_content('span:i99'); return false;"><span class="category">Basic properties</span></a></h3></div><div style="display: inline" id="span:i99" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i163" onclick="swap_content('span:i163'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i163" onclick="swap_content('span:i163'); return false;"><b>BOUNDARY</b>:
+		</a><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a><br /><div style="display: inline" id="span:i163" class="foldit"><div class="descr"><p> Codimension-1-faces of a <a href="#i121" onclick="unfold('span:i121');">PSEUDO_MANIFOLD</a> which are contained in one facet only.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i162" onclick="swap_content('span:i162'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i162" onclick="swap_content('span:i162'); return false;"><b>DIM</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i162" class="foldit"><div class="descr"><p> Maximal dimension of the <a href="#i156" onclick="unfold('span:i156');">FACETS</a>, where the dimension of a facet is defined as
+ the number of its vertices minus one.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i159" onclick="swap_content('span:i159'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i159" onclick="swap_content('span:i159'); return false;"><b>DUAL_GRAPH</b>:
+		</a><a href="graph.html#i15" onclick="unfold('span:i15');">graph::Graph&lt;Undirected&gt;</a><br /><div style="display: inline" id="span:i159" class="foldit"><div class="descr"><p> The graph of facet neighborhood.
+ Two <a href="#i156" onclick="unfold('span:i156');">FACETS</a> are neighbors if they share a (d-1)-dimensional face.</p></div><h4>Properties of DUAL_GRAPH</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i172" onclick="swap_content('span:i172'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i172" onclick="swap_content('span:i172'); return false;"><b>COLORING</b>:
+		</a><a href="common.html#i46" onclick="unfold('span:i46');">common::NodeMap&lt;Undirected, Int&gt;</a><br /><div style="display: inline" id="span:i172" class="foldit"><div class="undoc"><p>UNDOCUMENTED</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i156" onclick="swap_content('span:i156'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i156" onclick="swap_content('span:i156'); return false;"><b>FACETS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i156" class="foldit"><div class="descr"><p> Faces which are maximal with respect to inclusion, encoded as their ordered set of vertices.
+ The vertices must be numbered 0, ..., n-1.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i160" onclick="swap_content('span:i160'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i160" onclick="swap_content('span:i160'); return false;"><b>GRAPH</b>:
+		</a><a href="graph.html#i15" onclick="unfold('span:i15');">graph::Graph&lt;Undirected&gt;</a><br /><div style="display: inline" id="span:i160" class="foldit"><div class="descr"><p> The subcomplex consisting of all 1-faces.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i153" onclick="swap_content('span:i153'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i153" onclick="swap_content('span:i153'); return false;"><b>HASSE_DIAGRAM</b>:
+		</a><a href="graph.html#i12" onclick="unfold('span:i12');">graph::FaceLattice</a><br /><div style="display: inline" id="span:i153" class="foldit"><div class="descr"><p> The face lattice of the simplical complex
+ organized as a directed graph.  Each node corresponds to some face
+ of the simplical complex. It is represented as the list of vertices
+ comprising the face. The outgoing arcs point to the containing faces
+ of the next dimension. An artificial top node is added to represent
+ the entire complex.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i161" onclick="swap_content('span:i161'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i161" onclick="swap_content('span:i161'); return false;"><b>INPUT_FACES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i161" class="foldit"><div class="descr"><p> Any description of the faces of a simplicial complex.  Redundancy allowed.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i158" onclick="swap_content('span:i158'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i158" onclick="swap_content('span:i158'); return false;"><b>N_FACETS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i158" class="foldit"><div class="descr"><p> Number of <a href="#i156" onclick="unfold('span:i156');">FACETS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i164" onclick="swap_content('span:i164'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i164" onclick="swap_content('span:i164'); return false;"><b>N_VERTICES</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i164" class="foldit"><div class="descr"><p> Number of vertices.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i157" onclick="swap_content('span:i157'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i157" onclick="swap_content('span:i157'); return false;"><b>PURE</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i157" class="foldit"><div class="descr"><p> A simplicial complex is <em class="u">pure</em> if all its facets have the same dimension.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i154" onclick="swap_content('span:i154'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i154" onclick="swap_content('span:i154'); return false;"><b>VERTEX_INDICES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i154" class="foldit"><div class="descr"><p> Indices of the <a href="#" onclick="unfold('span:');" class="invalid">VERTICES</a> from <a href="#i161" onclick="unfold('span:i161');">INPUT_FACES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i155" onclick="swap_content('span:i155'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i155" onclick="swap_content('span:i155'); return false;"><b>VERTEX_LABELS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;String&gt;</a><br /><div style="display: inline" id="span:i155" class="foldit"><div class="descr"><p> Labels of the vertices.</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i98" onclick="swap_content('span:i98'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i98" onclick="swap_content('span:i98'); return false;"><span class="category">Combinatorics</span></a></h3></div><div style="display: inline" id="span:i98" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i150" onclick="swap_content('span:i150'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i150" onclick="swap_content('span:i150'); return false;"><b>COLORING</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i150" class="foldit"><div class="descr"><p> A coloring of the vertices.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i141" onclick="swap_content('span:i141'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i141" onclick="swap_content('span:i141'); return false;"><b>F2_VECTOR</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Int, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i141" class="foldit"><div class="descr"><p> f<sub>ik</sub> is the number of incident pairs of i-faces and k-faces; the main
+ diagonal contains the <a href="#i151" onclick="unfold('span:i151');">F_VECTOR</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i148" onclick="swap_content('span:i148'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i148" onclick="swap_content('span:i148'); return false;"><b>FOLDABLE</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i148" class="foldit"><div class="descr"><p> True if <a href="#i160" onclick="unfold('span:i160');">GRAPH</a> is (<a href="#i162" onclick="unfold('span:i162');">DIM</a> + 1)-colorable.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i151" onclick="swap_content('span:i151'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i151" onclick="swap_content('span:i151'); return false;"><b>F_VECTOR</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i151" class="foldit"><div class="descr"><p> f<sub>k</sub> is the number of k-faces, for k = 0,... , d, where d is the dimension.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i142" onclick="swap_content('span:i142'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i142" onclick="swap_content('span:i142'); return false;"><b>H_VECTOR</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i142" class="foldit"><div class="descr"><p> The h-vector of the simplicial complex.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i144" onclick="swap_content('span:i144'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i144" onclick="swap_content('span:i144'); return false;"><b>MINIMAL_NON_FACES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i144" class="foldit"><div class="descr"><p> Inclusion minimal non-faces (vertex subsets which are not faces of the simplicial complex).</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i146" onclick="swap_content('span:i146'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i146" onclick="swap_content('span:i146'); return false;"><b>N_MINIMAL_NON_FACES</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i146" class="foldit"><div class="descr"><p> Number of <a href="#i144" onclick="unfold('span:i144');">MINIMAL_NON_FACES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i152" onclick="swap_content('span:i152'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i152" onclick="swap_content('span:i152'); return false;"><b>ODD_SUBCOMPLEX</b>:
+		</a><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a><br /><div style="display: inline" id="span:i152" class="foldit"><div class="descr"><p> Subcomplex generated by faces of codimension 2 that are contained in an odd
+ number of faces of codimension 1.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i147" onclick="swap_content('span:i147'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i147" onclick="swap_content('span:i147'); return false;"><b>PROJ_DICTIONARY</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i147" class="foldit"><div class="descr"><p> For each vertex the corresponding vertex of facet 0 with respect to the action of the group of projectivities.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i143" onclick="swap_content('span:i143'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i143" onclick="swap_content('span:i143'); return false;"><b>PROJ_ORBITS</b>:
+		</a><a href="common.html#i42" onclick="unfold('span:i42');">common::PowerSet&lt;Int&gt;</a><br /><div style="display: inline" id="span:i143" class="foldit"><div class="descr"><p> Orbit decomposition of the group of projectivities acting on the set of vertices of facet 0.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i149" onclick="swap_content('span:i149'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i149" onclick="swap_content('span:i149'); return false;"><b>SHELLABLE</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i149" class="foldit"><div class="descr"><p> True if this is shellable.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i145" onclick="swap_content('span:i145'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i145" onclick="swap_content('span:i145'); return false;"><b>SHELLING</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i145" class="foldit"><div class="descr"><p> An ordered list of facets constituting a shelling.</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i100" onclick="swap_content('span:i100'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i100" onclick="swap_content('span:i100'); return false;"><span class="category">Geometric Complexes</span></a></h3></div><div style="display: inline" id="span:i100" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i166" onclick="swap_content('span:i166'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i166" onclick="swap_content('span:i166'); return false;"><b>SIGNATURE</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i166" class="foldit"><div class="descr"><p> Signature of a geometric simplicial complex embedded in the integer lattice.
+ Like <a href="#i84" onclick="unfold('span:i84');">DUAL_GRAPH_SIGNATURE</a>, but only simplices with odd normalized volume are counted.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i165" onclick="swap_content('span:i165'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i165" onclick="swap_content('span:i165'); return false;"><b>VOLUME</b>:
+		</a><a href="common.html#i60" onclick="unfold('span:i60');">common::Rational</a><br /><div style="display: inline" id="span:i165" class="foldit"><div class="descr"><p> Volume of a geometric simplicial complex.
+ <strong>FIXME:</strong> introduce type RealizedSimplicialComplex&lt;Scalar=Rational&gt; : SimplicialComplex</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i97" onclick="swap_content('span:i97'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i97" onclick="swap_content('span:i97'); return false;"><span class="category">Topology</span></a></h3></div><div style="display: inline" id="span:i97" class="foldit"><div class="descr"><p> The following properties are topological invariants.</p></div><ul><li><div class="li"><div class="icon" id="icon:i133" onclick="swap_content('span:i133'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i133" onclick="swap_content('span:i133'); return false;"><b>BALL</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i133" class="foldit"><div class="descr"><p> Heuristically true if the topological space homeomorphic to a ball.
+ Similar remarks hold as for <a href="#i127" onclick="unfold('span:i127');">SPHERE</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i131" onclick="swap_content('span:i131'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i131" onclick="swap_content('span:i131'); return false;"><b>CLOSED_PSEUDO_MANIFOLD</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i131" class="foldit"><div class="descr"><p> True if this is a <a href="#i157" onclick="unfold('span:i157');">PURE</a> simplicial complex with the property that each ridge is
+ contained in exactly two facets.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i139" onclick="swap_content('span:i139'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i139" onclick="swap_content('span:i139'); return false;"><b>COCYCLES</b>:
+		</a><a href="#i28" onclick="unfold('span:i28');">Array&lt;CycleGroup&gt;</a><br /><div style="display: inline" id="span:i139" class="foldit"><div class="descr"><p> Representatives of cocycle groups, listed in increasing codimension order.
+ Encoding similar to <a href="#i137" onclick="unfold('span:i137');">CYCLES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i119" onclick="swap_content('span:i119'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i119" onclick="swap_content('span:i119'); return false;"><b>COHOMOLOGY</b>:
+		</a><a href="#i28" onclick="unfold('span:i28');">Array&lt;HomologyGroup&gt;</a><br /><div style="display: inline" id="span:i119" class="foldit"><div class="descr"><p> Reduced cohomology groups, listed in increasing codimension order.
+ Encoding similar to <a href="#i132" onclick="unfold('span:i132');">HOMOLOGY</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i137" onclick="swap_content('span:i137'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i137" onclick="swap_content('span:i137'); return false;"><b>CYCLES</b>:
+		</a><a href="#i28" onclick="unfold('span:i28');">Array&lt;CycleGroup&gt;</a><br /><div style="display: inline" id="span:i137" class="foldit"><div class="descr"><p> Representatives of cycle groups, listed in increasing dimension order.</p><p> The first component in each dimension is a matrix of integer coefficients,
+ the second component is a vector of faces.  To obtain the chains, one must
+ (symbolically) multiply both components.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i134" onclick="swap_content('span:i134'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i134" onclick="swap_content('span:i134'); return false;"><b>EULER_CHARACTERISTIC</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i134" class="foldit"><div class="descr"><p> Reduced Euler characteristic.  Alternating sum of the <a href="#i151" onclick="unfold('span:i151');">F_VECTOR</a> minus 1.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i117" onclick="swap_content('span:i117'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i117" onclick="swap_content('span:i117'); return false;"><b>FUNDAMENTAL_GROUP</b>:
+		</a><a href="common.html#i17" onclick="unfold('span:i17');">common::Tuple&lt;Int, List&lt;List&lt;Tuple&lt;Int, Int&gt;&gt;&gt;&gt;</a><br /><div style="display: inline" id="span:i117" class="foldit"><div class="descr"><p> A finite representation of the fundamental group.
+ The fundamental group is represented as a pair of an integer,
+ the number of generators, and a list of relations. The generators are numbered
+ consecutively starting with zero. A relation is encoded as a list of pairs,
+ each pair consisting of a generator and its exponent.</p><p> You may use the <a href="#i107" onclick="unfold('span:i107');">fundamental2gap</a> method to produce a <code>GAP</code> file.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i124" onclick="swap_content('span:i124'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i124" onclick="swap_content('span:i124'); return false;"><b>FUNDAMENTAL_GROUP_GEN_LABELS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;String&gt;</a><br /><div style="display: inline" id="span:i124" class="foldit"><div class="descr"><p> Labels of the generators of the <a href="#i117" onclick="unfold('span:i117');">FUNDAMENTAL_GROUP</a>.
+ The labels can be chosen freely. If the <a href="#i117" onclick="unfold('span:i117');">FUNDAMENTAL_GROUP</a> is computed
+ by polymake, the generators correspond to the edges of the
+ complex. Hence they are labeled <code>g</code> followed by the vertices of the edge, e.g.
+ <code>g3_6</code> corresponds to the edge {3 6}.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i138" onclick="swap_content('span:i138'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i138" onclick="swap_content('span:i138'); return false;"><b>GENUS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i138" class="foldit"><div class="descr"><p> The <em class="u">genus</em> of a surface.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i132" onclick="swap_content('span:i132'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i132" onclick="swap_content('span:i132'); return false;"><b>HOMOLOGY</b>:
+		</a><a href="#i28" onclick="unfold('span:i28');">Array&lt;HomologyGroup&gt;</a><br /><div style="display: inline" id="span:i132" class="foldit"><div class="descr"><p> Reduced simplicial homology groups H<sub>0</sub>, ..., H<sub>d</sub> (integer coefficients), listed in increasing dimension order.</p><p> Each group G is encoded as a sequence ( { (t<sub>1</sub> m<sub>1</sub>) ...  (t<sub>n</sub>  m<sub>n</sub>) } f) of non-negative integers,
+ with t<sub>1</sub> &gt; t<sub>2</sub> &gt; ... &gt; <sub>n</sub> &gt; 1, plus an extra non-negative integer f.
+ The group G is isomorphic to (Z/t<sub>1</sub>)<sup>m<sub>1</sub></sup> × ... × (Z/t<sub>n</sub>)<sup>m<sub>n</sub></sup> × Z<sup>f</sup>, 
+ where Z<sup>0</sup> is the trivial group.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i128" onclick="swap_content('span:i128'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i128" onclick="swap_content('span:i128'); return false;"><b>INTERSECTION_FORM</b>:
+		</a><a href="#i30" onclick="unfold('span:i30');">IntersectionForm</a><br /><div style="display: inline" id="span:i128" class="foldit"><div class="descr"><p> Parity and signature of the intersection form of a closed oriented 4-manifold.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i116" onclick="swap_content('span:i116'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i116" onclick="swap_content('span:i116'); return false;"><b>KNOT</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i116" class="foldit"><div class="descr"><p> Edge-subset of a 3-sphere which is a knot or link, that is, a collection of pairwise disjoint cycles.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i118" onclick="swap_content('span:i118'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i118" onclick="swap_content('span:i118'); return false;"><b>LOCALLY_STRONGLY_CONNECTED</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i118" class="foldit"><div class="descr"><p> True if the vertex star of each vertex is <a href="#i85" onclick="unfold('span:i85');">DUAL_CONNECTED</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i140" onclick="swap_content('span:i140'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i140" onclick="swap_content('span:i140'); return false;"><b>MANIFOLD</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i140" class="foldit"><div class="descr"><p> True if this is a compact simplicial manifold with boundary.</p><p> Depends on heuristic <a href="#i127" onclick="unfold('span:i127');">SPHERE</a> recognition.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i135" onclick="swap_content('span:i135'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i135" onclick="swap_content('span:i135'); return false;"><b>MORSE_MATCHING</b>:
+		</a><a href="graph.html#i15" onclick="unfold('span:i15');">graph::Graph&lt;Undirected&gt;</a><br /><div style="display: inline" id="span:i135" class="foldit"><div class="descr"><p> A Morse matching is a reorientation of the arcs in the Hasse diagram of a simplicial complex
+ such that at most one arc incident to each face is reoriented (matching condition) and the
+ resulting orientation is acyclic (acyclicity condition). Morse matchings capture the main
+ structure of discrete Morse functions, see</p><blockquote><div>Robin Forman: Morse Theory for Cell-Complexes,</div><div>Advances in Math., 134 (1998), pp. 90-145.</div></blockquote><p>
+ This property is computed by one of two heuristics. The default heuristic is
+ a simple greedy algorithm (<a href="#i73" onclick="unfold('span:i73');">greedy</a>). The alternative is to use a canceling algorithm
+ due to Forman (<a href="#i74" onclick="unfold('span:i74');">cancel</a>). Note that the computation of a Morse matching of largest
+ size is NP-hard. See</p><blockquote><div>Michael Joswig, Marc E. Pfetsch: Computing Optimal Morse Matchings</div><div>SIAM J. Discrete Math., 2006, to appear</div></blockquote></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i136" onclick="swap_content('span:i136'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i136" onclick="swap_content('span:i136'); return false;"><b>MORSE_MATCHING_CRITICAL_FACES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i136" class="foldit"><div class="descr"><p> The critical faces of the computed Morse matching, i.e., the faces not
+ incident to any reoriented arc (not matched).
+ FIXME: temporary</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i125" onclick="swap_content('span:i125'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i125" onclick="swap_content('span:i125'); return false;"><b>MORSE_MATCHING_CRITICAL_FACE_VECTOR</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i125" class="foldit"><div class="descr"><p> The vector of critical faces in each dimension.
+ FIXME: temporary</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i126" onclick="swap_content('span:i126'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i126" onclick="swap_content('span:i126'); return false;"><b>MORSE_MATCHING_N_CRITICAL_FACES</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i126" class="foldit"><div class="descr"><p> Number of critical faces of the computed Morse matching.
+ FIXME: temporary</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i120" onclick="swap_content('span:i120'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i120" onclick="swap_content('span:i120'); return false;"><b>MORSE_MATCHING_SIZE</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i120" class="foldit"><div class="descr"><p> Size of the computed Morse matching.
+ FIXME: temporary</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i122" onclick="swap_content('span:i122'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i122" onclick="swap_content('span:i122'); return false;"><b>ORIENTATION</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Bool&gt;</a><br /><div style="display: inline" id="span:i122" class="foldit"><div class="descr"><p> An orientation of the facets of an <a href="#i123" onclick="unfold('span:i123');">ORIENTED_PSEUDO_MANIFOLD</a>, such that the induced orientations
+ of a common ridge of two neighboring facets cancel each other out. Each facet is marked with <em class="param">true</em>
+ if the orientation is given by the increasing vertex ordering and is marked with <em class="param">false</em> if the
+ orientation is obtained from the increasing vertex ordering by a transposition.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i123" onclick="swap_content('span:i123'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i123" onclick="swap_content('span:i123'); return false;"><b>ORIENTED_PSEUDO_MANIFOLD</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i123" class="foldit"><div class="descr"><p> True if this is a <a href="#i121" onclick="unfold('span:i121');">PSEUDO_MANIFOLD</a> with top level homology isomorphic to Z.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i121" onclick="swap_content('span:i121'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i121" onclick="swap_content('span:i121'); return false;"><b>PSEUDO_MANIFOLD</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i121" class="foldit"><div class="descr"><p> True if this is a <a href="#i157" onclick="unfold('span:i157');">PURE</a> simplicial complex with the property that each ridge is
+ contained in either one or two facets.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i127" onclick="swap_content('span:i127'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i127" onclick="swap_content('span:i127'); return false;"><b>SPHERE</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i127" class="foldit"><div class="descr"><p> If true then the space is homeomorphic to a sphere.
+ However, recognizing spheres is undecidable in dimensions &gt;= 5, and all known algorithms in
+ dimension 3 are of outrageous complexity.  We therefore use the flip-heuristics by Bjoerner
+ and Lutz.  This means that if this property is false then the space still might be a sphere.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i130" onclick="swap_content('span:i130'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i130" onclick="swap_content('span:i130'); return false;"><b>STIEFEL_WHITNEY</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;PowerSet&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i130" class="foldit"><div class="descr"><p> Mod 2 cycle representation of Stiefel-Whitney classes.  Each cycle is represented as a set of simplices.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i129" onclick="swap_content('span:i129'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i129" onclick="swap_content('span:i129'); return false;"><b>SURFACE</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br /><div style="display: inline" id="span:i129" class="foldit"><div class="descr"><p> True if this is a <a href="#i93" onclick="unfold('span:i93');">CONNECTED</a> <a href="#i140" onclick="unfold('span:i140');">MANIFOLD</a> of dimension 2.</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i96" onclick="swap_content('span:i96'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i96" onclick="swap_content('span:i96'); return false;"><span class="category">Visualization</span></a></h3></div><div style="display: inline" id="span:i96" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i113" onclick="swap_content('span:i113'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i113" onclick="swap_content('span:i113'); return false;"><b>GEOMETRIC_REALIZATION</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i113" class="foldit"><div class="descr"><p> Coordinates for the vertices of the simplicial complex, such that the complex is
+ embedded without crossings in some R<sup>e</sup>.  Vector (x<sub>1</sub>, .... x<sub>e</sub>) represents a point
+ in Euclidean e-space.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i115" onclick="swap_content('span:i115'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i115" onclick="swap_content('span:i115'); return false;"><b>G_DIM</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i115" class="foldit"><div class="descr"><p> Dimension e of the space in which the <a href="#i113" onclick="unfold('span:i113');">GEOMETRIC_REALIZATION</a> of the complex is embedded.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i114" onclick="swap_content('span:i114'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i114" onclick="swap_content('span:i114'); return false;"><b>MIXED_GRAPH</b>:
+		</a><a href="#i18" onclick="unfold('span:i18');">MixedGraph</a><br /><div style="display: inline" id="span:i114" class="foldit"><div class="descr"><p> The nodes of the mixed graph are the nodes of the primal <a href="#i160" onclick="unfold('span:i160');">GRAPH</a> and
+ the <a href="#i159" onclick="unfold('span:i159');">DUAL_GRAPH</a>. Additional to the primal and dual edges, there is
+ an edge between a primal and a dual node iff the primal node represents
+ a vertex of the corresponding facet of the dual node.
+ <strong>FIXME:</strong> temporary</p></div></div></div></div></li></ul></div></div></div></li></ul><h4>User Methods of SimplicialComplex</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i80" onclick="swap_content('span:i80'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i80" onclick="swap_content('span:i80'); return false;"><b>BIPARTITE</b></a>
+			()  
+
+			<div style="display: inline" id="span:i80" class="foldit"><br /><div class="descr_func"><div class="descr"><p> True if <a href="#i160" onclick="unfold('span:i160');">GRAPH</a> is a <em class="u">bipartite</em>. </p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i93" onclick="swap_content('span:i93'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i93" onclick="swap_content('span:i93'); return false;"><b>CONNECTED</b></a>
+			()  
+
+			<div style="display: inline" id="span:i93" class="foldit"><br /><div class="descr_func"><div class="descr"><p> True if the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a> is a connected graph.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i95" onclick="swap_content('span:i95'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i95" onclick="swap_content('span:i95'); return false;"><b>CONNECTED_COMPONENTS</b></a>
+			()  
+
+			<div style="display: inline" id="span:i95" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The connected components of the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a>, encoded as node sets. </p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i90" onclick="swap_content('span:i90'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i90" onclick="swap_content('span:i90'); return false;"><b>CONNECTIVITY</b></a>
+			()  
+
+			<div style="display: inline" id="span:i90" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Node connectivity of the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a>, that is, the minimal number of nodes to be removed from the graph such that the result is disconnected.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i83" onclick="swap_content('span:i83'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i83" onclick="swap_content('span:i83'); return false;"><b>DUAL_BIPARTITE</b></a>
+			()  
+
+			<div style="display: inline" id="span:i83" class="foldit"><br /><div class="descr_func"><div class="descr"><p> True if <a href="#i159" onclick="unfold('span:i159');">DUAL_GRAPH</a> is a <em class="u">bipartite</em>.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i85" onclick="swap_content('span:i85'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i85" onclick="swap_content('span:i85'); return false;"><b>DUAL_CONNECTED</b></a>
+			()  
+
+			<div style="display: inline" id="span:i85" class="foldit"><br /><div class="descr_func"><div class="descr"><p> True if the <a href="#i159" onclick="unfold('span:i159');">DUAL_GRAPH</a> is a connected graph.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i81" onclick="swap_content('span:i81'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i81" onclick="swap_content('span:i81'); return false;"><b>DUAL_CONNECTED_COMPONENTS</b></a>
+			()  
+
+			<div style="display: inline" id="span:i81" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The connected components of the <a href="#i159" onclick="unfold('span:i159');">DUAL_GRAPH</a>, encoded as node sets. </p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i89" onclick="swap_content('span:i89'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i89" onclick="swap_content('span:i89'); return false;"><b>DUAL_CONNECTIVITY</b></a>
+			()  
+
+			<div style="display: inline" id="span:i89" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Node connectivity of the <a href="#i159" onclick="unfold('span:i159');">DUAL_GRAPH</a>. Dual to <a href="#i90" onclick="unfold('span:i90');">CONNECTIVITY</a>.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i84" onclick="swap_content('span:i84'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i84" onclick="swap_content('span:i84'); return false;"><b>DUAL_GRAPH_SIGNATURE</b></a>
+			()  
+
+			<div style="display: inline" id="span:i84" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Difference of the black and white nodes if the <a href="#i159" onclick="unfold('span:i159');">DUAL_GRAPH</a> is <a href="#i80" onclick="unfold('span:i80');">BIPARTITE</a>. Otherwise -1. </p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i79" onclick="swap_content('span:i79'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i79" onclick="swap_content('span:i79'); return false;"><b>DUAL_MAX_CLIQUES</b></a>
+			()  
+
+			<div style="display: inline" id="span:i79" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The maximal cliques of the <a href="#i159" onclick="unfold('span:i159');">DUAL_GRAPH</a>, encoded as node sets.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i94" onclick="swap_content('span:i94'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i94" onclick="swap_content('span:i94'); return false;"><b>GRAPH_SIGNATURE</b></a>
+			()  
+
+			<div style="display: inline" id="span:i94" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Difference of the black and white nodes if the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a> is <a href="#i80" onclick="unfold('span:i80');">BIPARTITE</a>. Otherwise -1.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i92" onclick="swap_content('span:i92'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i92" onclick="swap_content('span:i92'); return false;"><b>labeled_vertices</b></a>
+			(label ...)  
+
+			
+				→ Set&lt;Int&gt;<div style="display: inline" id="span:i92" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Find the vertices by given labels.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td class="param">label ...</td><td><div class="descr"><div>vertex labels</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i16" onclick="unfold('span:i16');">Set&lt;Int&gt;</a></td><td><div class="descr"><div>vertex indices</div></div></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i91" onclick="swap_content('span:i91'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i91" onclick="swap_content('span:i91'); return false;"><b>MAX_CLIQUES</b></a>
+			()  
+
+			<div style="display: inline" id="span:i91" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The maximal cliques of the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a>, encoded as node sets.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i88" onclick="swap_content('span:i88'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i88" onclick="swap_content('span:i88'); return false;"><b>N_CONNECTED_COMPONENTS</b></a>
+			()  
+
+			<div style="display: inline" id="span:i88" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Number of connected components of the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a>.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i82" onclick="swap_content('span:i82'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i82" onclick="swap_content('span:i82'); return false;"><b>VERTEX_DEGREES</b></a>
+			()  
+
+			<div style="display: inline" id="span:i82" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Degrees of vertices in the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a>.</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i86" onclick="swap_content('span:i86'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i86" onclick="swap_content('span:i86'); return false;"><span class="category">Topology</span></a></h3></div><div style="display: inline" id="span:i86" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i107" onclick="swap_content('span:i107'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i107" onclick="swap_content('span:i107'); return false;"><b>fundamental2gap</b></a>
+			()  
+
+			<div style="display: inline" id="span:i107" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Writes the <a href="#i117" onclick="unfold('span:i117');">FUNDAMENTAL_GROUP</a> using <a href="#i124" onclick="unfold('span:i124');">FUNDAMENTAL_GROUP_GEN_LABELS</a> to
+ the given file in <a href="http://polymake.org//external_software#gap" onclick="unfold('span:gap');">GAP</a> input format.</p></div></div><div class="level3"></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i87" onclick="swap_content('span:i87'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i87" onclick="swap_content('span:i87'); return false;"><span class="category">Visualization</span></a></h3></div><div style="display: inline" id="span:i87" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i109" onclick="swap_content('span:i109'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i109" onclick="swap_content('span:i109'); return false;"><b>VISUAL</b></a>
+			()  
+
+			
+				→ Visual::SimplicialComplex<div style="display: inline" id="span:i109" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Visualizes the complex.</p><p> If <a href="#i115" onclick="unfold('span:i115');">G_DIM</a> &lt; 4, the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a> and the facets
+ are visualized using the <a href="#i113" onclick="unfold('span:i113');">GEOMETRIC_REALIZATION</a>.</p><p> Otherwise, the spring embedder and the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a> are used to
+ produce coordinates for the visualization.</p><p> If <a href="http://polymake.org//external_software#javaview" onclick="unfold('span:javaview');">JavaView</a> is used to visualize the complex, all faces of
+ one facet build a geometry in the jvx-file, so you may use
+ <em class="u">Method -&gt; Effect -&gt; Explode Group of Geometries</em> in the JavaView menu.</p></div></div><div class="level3"><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">mixed_graph</td><td><div class="descr"><div>use the <a href="#i114" onclick="unfold('span:i114');">MIXED_GRAPH</a> for the spring embedder</div></div></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">seed</td><td><div class="descr"><div>random seed value for the string embedder</div></div></td></tr><tr><td>option list:</td><td>Visual::Polygon::decorations</td></tr><tr><td>option list:</td><td>Visual::Graph::decorations</td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i19" onclick="unfold('span:i19');">Visual::SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i112" onclick="swap_content('span:i112'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i112" onclick="swap_content('span:i112'); return false;"><b>VISUAL_DUAL_GRAPH</b></a>
+			()  
+
+			
+				→ Visual::SimplicialComplex<div style="display: inline" id="span:i112" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Uses the spring embedder to visualize the <a href="#i159" onclick="unfold('span:i159');">DUAL_GRAPH</a>.</p></div></div><div class="level3"><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">seed</td><td><div class="descr"><div>random seed value for the string embedder</div></div></td></tr><tr><td>option list:</td><td>Visual::Graph::decorations</td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i19" onclick="unfold('span:i19');">Visual::SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i110" onclick="swap_content('span:i110'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i110" onclick="swap_content('span:i110'); return false;"><b>VISUAL_FACE_LATTICE</b></a>
+			()  
+
+			
+				→ Visual::SimplicialComplexLattice<div style="display: inline" id="span:i110" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Visualize the <a href="#i153" onclick="unfold('span:i153');">HASSE_DIAGRAM</a> of a simplicial complex as a multi-layer graph.</p></div></div><div class="level3"><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">seed</td><td><div class="descr"><div>random seed value for the node placement</div></div></td></tr><tr><td>option list:</td><td>Visual::Lattice::decorations</td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i16" onclick="unfold('span:i16');">Visual::SimplicialComplexLattice</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i111" onclick="swap_content('span:i111'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i111" onclick="swap_content('span:i111'); return false;"><b>VISUAL_GRAPH</b></a>
+			()  
+
+			
+				→ Visual::SimplicialComplex<div style="display: inline" id="span:i111" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Uses the spring embedder to visualize the <a href="#i160" onclick="unfold('span:i160');">GRAPH</a>.</p></div></div><div class="level3"><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">seed</td><td><div class="descr"><div>random seed value for the string embedder</div></div></td></tr><tr><td>option list:</td><td>Visual::Graph::decorations</td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i19" onclick="unfold('span:i19');">Visual::SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i108" onclick="swap_content('span:i108'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i108" onclick="swap_content('span:i108'); return false;"><b>VISUAL_MIXED_GRAPH</b></a>
+			()  
+
+			<div style="display: inline" id="span:i108" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Uses the spring embedder to visualize the <a href="#i114" onclick="unfold('span:i114');">MIXED_GRAPH</a>.</p></div></div><div class="level3"><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">seed</td><td><div class="descr"><div>random seed value for the string embedder</div></div></td></tr><tr><td>option list:</td><td>Visual::Graph::decorations</td></tr></table></div></div></div></div></li></ul></div></div></div></li></ul><h4>Permutations of SimplicialComplex</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i101" onclick="swap_content('span:i101'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i101" onclick="swap_content('span:i101'); return false;"><b>FacetPerm</b></a><div style="display: inline" id="span:i101" class="foldit"><div class="undoc"><p>UNDOCUMENTED</p></div><h4>Properties of FacetPerm</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i170" onclick="swap_content('span:i170'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i170" onclick="swap_content('span:i170'); return false;"><b>PERMUTATION</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i170" class="foldit"><div class="descr"><p> Transforming <a href="#i156" onclick="unfold('span:i156');">FACETS</a> from this into basic object</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i102" onclick="swap_content('span:i102'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i102" onclick="swap_content('span:i102'); return false;"><b>VertexPerm</b></a><div style="display: inline" id="span:i102" class="foldit"><div class="undoc"><p>UNDOCUMENTED</p></div><h4>Properties of VertexPerm</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i171" onclick="swap_content('span:i171'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i171" onclick="swap_content('span:i171'); return false;"><b>PERMUTATION</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Int&gt;</a><br /><div style="display: inline" id="span:i171" class="foldit"><div class="descr"><p> Transforming vertices from this into basic object.</p></div></div></div></div></li></ul></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i19" onclick="swap_content('span:i19'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i19" onclick="swap_content('span:i19'); return false;"><span class="object">Visual::SimplicialComplex</span></a></h3></div><div style="display: inline" id="span:i19" class="foldit"><div class="descr"><p> Visualization of the simplicial complex.</p></div><div class="level3"></div><h4>User Methods of Visual::SimplicialComplex</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i106" onclick="swap_content('span:i106'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i106" onclick="swap_content('span:i106'); return false;"><b>FACES</b></a>
+			(PROPERTY_NAME)  
+
+			<div style="display: inline" id="span:i106" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Add faces with optional different graphical attributes.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td class="param">PROPERTY_NAME</td><td><div class="descr"><div>or [ Faces ]</div></div></td></tr></table><h5>Options</h5><table class="args"><tr><td>option list:</td><td>Visual::Polygon::decorations</td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i104" onclick="swap_content('span:i104'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i104" onclick="swap_content('span:i104'); return false;"><b>MORSE_MATCHING</b></a>
+			()  
+
+			<div style="display: inline" id="span:i104" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Add the <a href="#" onclick="unfold('span:');" class="invalid">MORSE_MATCHING</a> to the visualization of the <a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a>.</p></div></div><div class="level3"><h5>Options</h5><table class="args"><tr><td>option list:</td><td>Visual::Graph::decorations</td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i105" onclick="swap_content('span:i105'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i105" onclick="swap_content('span:i105'); return false;"><b>SUBCOMPLEX</b></a>
+			(PROPERTY_NAME)  
+
+			<div style="display: inline" id="span:i105" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Add a subcomplex with optional different graphical attributes.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td class="param">PROPERTY_NAME</td><td><div class="descr"><div>or [ Facets ]</div></div></td></tr></table><h5>Options</h5><table class="args"><tr><td>option list:</td><td>Visual::Polygon::decorations</td></tr><tr><td>option list:</td><td>Visual::Graph::decorations</td></tr><tr><td>option list:</td><td>Visual::PointSet::decorations</td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i16" onclick="swap_content('span:i16'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i16" onclick="swap_content('span:i16'); return false;"><span class="object">Visual::SimplicialComplexLattice</span></a></h3></div><div style="display: inline" id="span:i16" class="foldit"><div class="descr"><p> Visualization of the <a href="#i153" onclick="unfold('span:i153');">HASSE_DIAGRAM</a> of a simplicial complex as a multi-layer graph.</p></div><div class="level3"></div><h4>User Methods of Visual::SimplicialComplexLattice</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i78" onclick="swap_content('span:i78'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i78" onclick="swap_content('span:i78'); return false;"><b>FACES</b></a>
+			(faces)  
+
+			<div style="display: inline" id="span:i78" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Add distinguished faces with different graphical attributes <em class="param">NodeColor</em> and <em class="param">NodeStyle</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Set&gt;</a></td><td class="param">faces</td><td><div class="descr"><div>(to be changed in the near future)</div></div></td></tr></table><h5>Options</h5><table class="args"><tr><td>option list:</td><td>Visual::Lattice::decorations</td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i77" onclick="swap_content('span:i77'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i77" onclick="swap_content('span:i77'); return false;"><b>SUBCOMPLEX</b></a>
+			(property)  
+
+			<div style="display: inline" id="span:i77" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Add a subcomplex with different graphical attributes.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td class="param">property</td><td><div class="descr"><div>name of the subcomplex property (to be changed in the near future)</div></div></td></tr></table><h5>Options</h5><table class="args"><tr><td>option list:</td><td>Visual::Lattice::decorations</td></tr></table></div></div></div></div></li></ul></div></div></div></li></ul></div><div class="level2"><h2>User Functions</h2><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i8" onclick="swap_content('span:i8'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i8" onclick="swap_content('span:i8'); return false;"><b>cap_product</b></a>
+			()  
+
+			<div style="display: inline" id="span:i8" class="foldit"><br /><div class="descr_func"><div class="descr"><p>Compute and print all cap products of cohomology and homology cycles.
+args: SimplicialComplex</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i13" onclick="swap_content('span:i13'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i13" onclick="swap_content('span:i13'); return false;"><b>homology</b></a>
+			(complex, co)  
+
+			<div style="display: inline" id="span:i13" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Calculate the (co-)homology groups of a simplicial complex.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Set&lt;int&gt;&gt;</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">co</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">dim_low</td><td><div class="descr"><div>narrows the dimension range of interest, with negative values being treated as co-dimensions</div></div></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">dim_high</td><td><div class="descr"><div>see <em class="param">dim_low</em></div></div></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i10" onclick="swap_content('span:i10'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i10" onclick="swap_content('span:i10'); return false;"><b>homology_and_cycles</b></a>
+			(complex, co)  
+
+			<div style="display: inline" id="span:i10" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Calculate the (co-)homology groups and cycle representatives of a simplicial complex.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Set&lt;int&gt;&gt;</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">co</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">dim_low</td><td><div class="descr"><div>narrows the dimension range of interest, with negative values being treated as co-dimensions</div></div></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">dim_high</td><td><div class="descr"><div>see <em class="param">dim_low</em></div></div></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i14" onclick="swap_content('span:i14'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i14" onclick="swap_content('span:i14'); return false;"><b>is_vertex_decomposition</b></a>
+			()  
+
+			<div style="display: inline" id="span:i14" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Check whether a given ordered subset of the vertex set is a vertex decomposition.
+ Works for 1-, 2- and 3-manifolds only!</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i11" onclick="swap_content('span:i11'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i11" onclick="swap_content('span:i11'); return false;"><b>mixed_graph</b></a>
+			()  
+
+			<div style="display: inline" id="span:i11" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produces the mixed graph of a simplicial @a complex.
+args: complex [ edge_weight =&gt; VALUE ]</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i12" onclick="swap_content('span:i12'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i12" onclick="swap_content('span:i12'); return false;"><span class="category">Comparing</span></a></h3></div><div style="display: inline" id="span:i12" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i46" onclick="swap_content('span:i46'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i46" onclick="swap_content('span:i46'); return false;"><b>find_facet_vertex_permutations</b></a>
+			(complex1, complex2)  
+
+			
+				→ Pair&lt;Array&lt;Int&gt;, Array&lt;int&gt;&gt;<div style="display: inline" id="span:i46" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Find the permutations of facets and vertices which maps the first complex to the second one.
+ The facet permutation is the first component of the return value.
+ If the complexes are not isomorphic, an exception is thrown.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex1</td><td></td></tr><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex2</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i29" onclick="unfold('span:i29');">Pair&lt;Array&lt;Int&gt;, Array&lt;int&gt;&gt;</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i45" onclick="swap_content('span:i45'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i45" onclick="swap_content('span:i45'); return false;"><b>isomorphic</b></a>
+			(complex1, complex2)  
+
+			
+				→ Bool<div style="display: inline" id="span:i45" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Determine whether two given complexes are combinatorially isomorphic.
+ The problem is reduced to graph isomorphism of the vertex-facet incidence graphs.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex1</td><td></td></tr><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex2</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i47" onclick="swap_content('span:i47'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i47" onclick="swap_content('span:i47'); return false;"><b>pl_homeomorphic</b></a>
+			(complex1, complex2)  
+
+			
+				→ Bool<div style="display: inline" id="span:i47" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Tries to determine wheter two complexes are pl-homeomorphic by using
+  bistellar flips and a simulated annealing strategy.</p><p> You may specify the maximal number of <em class="param">rounds</em>, how often the system
+ may <em class="param">relax</em> before heating up and how much <em class="param">heat</em> should be applied.
+ The function stops computing, once the size of the triangulation has not decreased
+ for <em class="param">rounds</em> iterations. If the <em class="param">abs</em> flag is set, the function stops
+ after <em class="param">rounds</em> iterations regardless of when the last improvement took place.
+ Additionally, you may set the threshold <em class="param">min_n_facets</em> for the number of facets when
+ the simplification ought to stop. Default is d+2 in the <a href="#i131" onclick="unfold('span:i131');">CLOSED_PSEUDO_MANIFOLD</a> case
+ and 1 otherwise.</p><p> If you want to influence the distribution of the dimension of the moves when warming up
+ you may do so by specifying a <em class="param">distribution</em>. The number of values in <em class="param">distribution</em>
+ determines the dimensions used for heating up. The heating and relaxing parameters decrease dynamically
+ unless the <em class="param">constant</em> flag is set. The function prohibits to execute the reversed move of a move
+ directly after the move itself unless the <em class="param">allow_rev_move</em> flag is set. Setting the
+ <em class="param">allow_rev_move</em> flag might help solve a particular resilient problem.</p><p> If you are interested in how the process is coming along, try the <em class="param">verbose</em> option.
+ It specifies after how many rounds the current best result is displayed.</p><p> The <em class="param">obj</em> determines the objective function used for the optimization. If <em class="param">obj</em> is set to 0,
+ the function searches for the triangulation with the lexicographically smallest f-vector,
+ if <em class="param">obj</em> is set to 1, the function searches for the triangulation with the reversed-lexicographically
+ smallest f-vector and if <em class="param">obj</em> is set to 2 the sum of the f-vector entries is used.
+ The default is 1.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex1</td><td></td></tr><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex2</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">rounds</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">abs</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">obj</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">relax</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">heat</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">constant</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">allow_rev_move</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">min_n_facets</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">verbose</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">seed</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">quiet</td><td></td></tr><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Int&gt;</a></td><td class="param">distribution</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td></td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i15" onclick="swap_content('span:i15'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i15" onclick="swap_content('span:i15'); return false;"><span class="category">Producing a new simplicial complex from others</span></a></h3></div><div style="display: inline" id="span:i15" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i49" onclick="swap_content('span:i49'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i49" onclick="swap_content('span:i49'); return false;"><b>alexander_dual</b></a>
+			(complex)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i49" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Computes the Alexander dual complex, that is, the complements of all non-faces.
+ The vertex labels are preserved unless the <em class="param">nol</em> flag is specified.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">nol</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i53" onclick="swap_content('span:i53'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i53" onclick="swap_content('span:i53'); return false;"><b>balanced_prism</b></a>
+			(complex)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i53" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce a <em class="u">prism</em> over a given <a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">geom_real</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i48" onclick="swap_content('span:i48'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i48" onclick="swap_content('span:i48'); return false;"><b>barycentric_subdivision</b></a>
+			(complex)  
+
+			<div style="display: inline" id="span:i48" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Create a simplicial complex as a barycentric subdivision of a given complex.
+ Each vertex in the new complex corresponds to a face in the old complex.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">relabel</td><td><div class="descr"><div>generate vertex labels from the faces of the original complex.</div></div></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">geom_real</td><td><div class="descr"><div>read <a href="#i113" onclick="unfold('span:i113');">GEOMETRIC_REALIZATION</a> of the input complex,
+  compute the coordinates of the new vertices and store them as
+  <a href="#i113" onclick="unfold('span:i113');">GEOMETRIC_REALIZATION</a> of the produced complex.</div></div></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i50" onclick="swap_content('span:i50'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i50" onclick="swap_content('span:i50'); return false;"><b>bistellar_simplification</b></a>
+			(complex)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i50" class="foldit"><br /><div class="descr_func"><div class="descr"><p>  Heuristic for simplifying the triangulation of the given manifold
+  without changing its PL-type. The function uses
+  bistellar flips and a simulated annealing strategy.</p><p> You may specify the maximal number of <em class="param">rounds</em>, how often the system
+ may <em class="param">relax</em> before heating up and how much <em class="param">heat</em> should be applied.
+ The function stops computing, once the size of the triangulation has not decreased
+ for <em class="param">rounds</em> iterations. If the <em class="param">abs</em> flag is set, the function stops
+ after <em class="param">rounds</em> iterations regardless of when the last improvement took place.
+ Additionally, you may set the threshold <em class="param">min_n_facets</em> for the number of facets when
+ the simplification ought to stop. Default is d+2 in the <a href="#i131" onclick="unfold('span:i131');">CLOSED_PSEUDO_MANIFOLD</a> case
+ and 1 otherwise.</p><p> If you want to influence the distribution of the dimension of the moves when warming up
+ you may do so by specifying a <em class="param">distribution</em>. The number of values in <em class="param">distribution</em>
+ determines the dimensions used for heating up. The heating and relaxing parameters decrease dynamically
+ unless the <em class="param">constant</em> flag is set. The function prohibits to execute the reversed move of a move
+ directly after the move itself unless the <em class="param">allow_rev_move</em> flag is set. Setting the
+ <em class="param">allow_rev_move</em> flag might help solve a particular resilient problem.</p><p> If you are interested in how the process is coming along, try the <em class="param">verbose</em> option.
+ It specifies after how many rounds the current best result is displayed.</p><p> The <em class="param">obj</em> determines the objective function used for the optimization. If <em class="param">obj</em> is set to 0,
+ the function searches for the triangulation with the lexicographically smallest f-vector,
+ if <em class="param">obj</em> is set to any other value the sum of the f-vector entries is used.
+ The default is 1.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">rounds</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">abs</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">obj</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">relax</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">heat</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">constant</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">allow_rev_move</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">min_n_facets</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">verbose</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">seed</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">quiet</td><td></td></tr><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Int&gt;</a></td><td class="param">distribution</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i61" onclick="swap_content('span:i61'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i61" onclick="swap_content('span:i61'); return false;"><b>cone</b></a>
+			(complex, k)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i61" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce the <em class="param">k</em>-cone over a given simplicial complex.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td>int</td><td class="param">k</td><td><div class="descr"><div>default is 1</div></div></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;String&gt;</a></td><td class="param">apex_labels</td><td><div class="descr"><div>labels of the apex vertices.
+  Default labels have the form <code>apex_0, apex_1, ...</code>.
+  In the case the input complex has already vertex labels of this kind,
+  the duplicates are avoided.</div></div></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">nol</td><td><div class="descr"><div>don't generate any vertex labels.</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i57" onclick="swap_content('span:i57'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i57" onclick="swap_content('span:i57'); return false;"><b>connected_sum</b></a>
+			(complex1, complex2, f_1, f_2)  
+
+			<div style="display: inline" id="span:i57" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Compute the connected sum of two complexes.</p><p> Parameters <em class="param">f_1 and </em>f_2// specify which facet of the first and second complex correspondingly are glued together.
+ Default is the 0-th facet of both.</p><p> The vertices in the selected facets are identified with each other according to their order in the facet
+ (that is, in icreasing index order).  The option <em class="param">permutation</em> allows to get an alternative identification. It should specify a
+ permutation of the vertices of the second facet.</p><p> The vertices of the new complex get the original labels with <code>_1</code> or <code>_2</code> appended, according to the input complex
+  they came from.  If you set the <em class="param">no_labels</em> flag, the label generation will be omitted.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex1</td><td></td></tr><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex2</td><td></td></tr><tr><td>int</td><td class="param">f_1</td><td><div class="descr"><div>default is 0</div></div></td></tr><tr><td>int</td><td class="param">f_2</td><td><div class="descr"><div>default is 0</div></div></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;int&gt;</a></td><td class="param">permutation</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_lables</td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i60" onclick="swap_content('span:i60'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i60" onclick="swap_content('span:i60'); return false;"><b>deletion</b></a>
+			(complex, face)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i60" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Remove the given <em class="param">face</em> and all the faces containing it.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i16" onclick="unfold('span:i16');">Set&lt;Int&gt;</a></td><td class="param">face</td><td><div class="descr"><div>specified by vertex indices.
+  Please use <a href="#i92" onclick="unfold('span:i92');">labeled_vertices</a> if you want to specify the face by vertex labels.</div></div></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_labels</td><td><div class="descr"><div>do not write vertex labels.</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i64" onclick="swap_content('span:i64'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i64" onclick="swap_content('span:i64'); return false;"><b>disjoint_union</b></a>
+			(complex1, complex2)  
+
+			<div style="display: inline" id="span:i64" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce the disjoint union of the two given complexes.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex1</td><td></td></tr><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex2</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td>labels</td><td class="param">creates</td><td><div class="descr"><div><a href="#i155" onclick="unfold('span:i155');">VERTEX_LABELS</a>.
+ The vertex labels are built from the original labels with a suffix <code>_1</code> or <code>_2</code> appended.</div></div></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i52" onclick="swap_content('span:i52'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i52" onclick="swap_content('span:i52'); return false;"><b>edge_contraction</b></a>
+			(complex)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i52" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Heuristic for simplifying the triangulation of the given manifold
+ without changing its PL-type. Choosing a random order of the vertices,
+ the function tries to contract all incident edges.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">seed</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i63" onclick="swap_content('span:i63'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i63" onclick="swap_content('span:i63'); return false;"><b>h_induced_quotient</b></a>
+			(C, vertices)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i63" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Let <em class="param">C</em> be the given simplicial and A the subcomplex induced by
+ the given <em class="param">vertices</em>. Then this function produces a simplicial complex
+ homotopy equivalent to <em class="param">C</em> mod A by adding the cone over A with
+ apex a to <em class="param">C</em>.
+ The label of the apex my be specified via the option <em class="param">apex</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">C</td><td></td></tr><tr><td><a href="common.html#i16" onclick="unfold('span:i16');">Set&lt;Int&gt;</a></td><td class="param">vertices</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_labels</td><td><div class="descr"><div>tells the client not to write any labels.</div></div></td></tr><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td class="param">apex</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i65" onclick="swap_content('span:i65'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i65" onclick="swap_content('span:i65'); return false;"><b>induced_subcomplex</b></a>
+			(complex, vertices)  
+
+			<div style="display: inline" id="span:i65" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce the subcomplex consisting of all faces which are contained in the given set of <em class="param">vertices</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i16" onclick="unfold('span:i16');">Set&lt;Int&gt;</a></td><td class="param">vertices</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_label</td><td><div class="descr"><div>tells the client not to create any labels.</div></div></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">geom_real</td><td><div class="descr"><div>tells the client to inherit the <a href="#i113" onclick="unfold('span:i113');">GEOMETRIC_REALIZATION</a>.</div></div></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i59" onclick="swap_content('span:i59'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i59" onclick="swap_content('span:i59'); return false;"><b>join_complexes</b></a>
+			(complex1, complex2)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i59" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Creates the join of <em class="param">complex1</em> and <em class="param">complex2</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex1</td><td></td></tr><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex2</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">labels</td><td><div class="descr"><div>creates <a href="#i155" onclick="unfold('span:i155');">VERTEX_LABELS</a>.
+  The vertex labels are built from the original labels with a suffix <code>_1</code> or <code>_2</code> appended.</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i62" onclick="swap_content('span:i62'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i62" onclick="swap_content('span:i62'); return false;"><b>k_skeleton</b></a>
+			(complex, k)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i62" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce the <em class="param">k</em>-skeleton.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td>int</td><td class="param">k</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">nol</td><td><div class="descr"><div>suppresses creation of <a href="#i155" onclick="unfold('span:i155');">VERTEX_LABELS</a></div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i51" onclick="swap_content('span:i51'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i51" onclick="swap_content('span:i51'); return false;"><b>link_complex</b></a>
+			(complex, face)  
+
+			<div style="display: inline" id="span:i51" class="foldit"><br /><div class="descr_func"><div class="descr"><p>  Produce the <em class="u">link</em> of a <em class="param">face</em> of the <em class="param">complex</em></p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i16" onclick="unfold('span:i16');">Set&lt;int&gt;</a></td><td class="param">face</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_labels</td><td><div class="descr"><div>tells the client not to create any labels.</div></div></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i55" onclick="swap_content('span:i55'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i55" onclick="swap_content('span:i55'); return false;"><b>simplicial_product</b></a>
+			(complex1, complex2)  
+
+			<div style="display: inline" id="span:i55" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Computes the simplicial product of two complexes.
+ Vertex orderings may be given as options.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex1</td><td></td></tr><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex2</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Int&gt;</a></td><td class="param">vertex_order1</td><td></td></tr><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Int&gt;</a></td><td class="param">vertex_order2</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">geom_real</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">color_cons</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_labels</td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i58" onclick="swap_content('span:i58'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i58" onclick="swap_content('span:i58'); return false;"><b>star</b></a>
+			(complex, face)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i58" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce the <em class="u">star</em> of the <em class="param">face</em> of the <em class="param">complex</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i16" onclick="unfold('span:i16');">Set&lt;int&gt;</a></td><td class="param">face</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">labels</td><td><div class="descr"><div>creates <a href="#i155" onclick="unfold('span:i155');">VERTEX_LABELS</a>.</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i66" onclick="swap_content('span:i66'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i66" onclick="swap_content('span:i66'); return false;"><b>star_deletion</b></a>
+			(complex, face)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i66" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Remove the star of a given <em class="param">face</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i16" onclick="unfold('span:i16');">Set&lt;Int&gt;</a></td><td class="param">face</td><td><div class="descr"><div>specified by vertex indices.
+  Please use <a href="#i92" onclick="unfold('span:i92');">labeled_vertices</a> if you want to specify the face by vertex labels.</div></div></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_labels</td><td><div class="descr"><div>do not write vertex labels.</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i54" onclick="swap_content('span:i54'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i54" onclick="swap_content('span:i54'); return false;"><b>stellar_subdivision</b></a>
+			(complex, faces)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i54" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Computes the complex obtained by stellar subdivision of the given <em class="param">faces</em> of the <em class="param">complex</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Set&lt;int&gt;&gt;</a></td><td class="param">faces</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_labels</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">geom_real</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i76" onclick="swap_content('span:i76'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i76" onclick="swap_content('span:i76'); return false;"><b>stellar_subdivision</b></a>
+			(complex, faces)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i76" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Computes the complex obtained by stellar subdivision of the given <em class="param">faces</em> of the <em class="param">complex</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Set&lt;int&gt;&gt;</a></td><td class="param">faces</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_labels</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">geom_real</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i56" onclick="swap_content('span:i56'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i56" onclick="swap_content('span:i56'); return false;"><b>suspension</b></a>
+			(complex, k)  
+
+			<div style="display: inline" id="span:i56" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce the <em class="param">k</em>-suspension over a given simplicial complex.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">k</td><td><div class="descr"><div>default value is 1</div></div></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;String&gt;</a></td><td class="param">labels</td><td><div class="descr"><div>for the apices.
+  By default apices are labeled with <code>apex_0+</code>, <code>apex_0-</code>, <code>apex_1+</code>, etc.
+  If one of the specified labels already exists, a unique one is made
+  by appending <code>_i</code> where <em class="param">i</em> is some small number.</div></div></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">nol</td><td><div class="descr"><div>do not produce any labels.</div></div></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i67" onclick="swap_content('span:i67'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i67" onclick="swap_content('span:i67'); return false;"><b>union</b></a>
+			(complex1, complex2)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i67" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce the union of the two given complexes, identifying
+ vertices with equal labels.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex1</td><td></td></tr><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td class="param">complex2</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">labels</td><td><div class="descr"><div>creates <a href="#i155" onclick="unfold('span:i155');">VERTEX_LABELS</a>.</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i9" onclick="swap_content('span:i9'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i9" onclick="swap_content('span:i9'); return false;"><span class="category">Producing a simplicial complex from other objects</span></a></h3></div><div style="display: inline" id="span:i9" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i43" onclick="swap_content('span:i43'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i43" onclick="swap_content('span:i43'); return false;"><b>clique_complex</b></a>
+			(graph)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i43" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce the <em class="u">clique complex</em> of a given graph.
+ If <em class="param">no_labels</em> is set to 1, the labels are not copied.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="graph.html#i14" onclick="unfold('span:i14');">Graph</a></td><td class="param">graph</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">no_labels</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i44" onclick="swap_content('span:i44'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i44" onclick="swap_content('span:i44'); return false;"><b>crosscut_complex</b></a>
+			(p)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i44" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce the <em class="u">crosscut complex</em> of the boundary of a polytope.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="polytope.html#i38" onclick="unfold('span:i38');">polytope::Polytope</a></td><td class="param">p</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">noc</td><td><div class="descr"><div>suppresses copying the vertex coordinates to <a href="#i113" onclick="unfold('span:i113');">GEOMETRIC_REALIZATION</a></div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i7" onclick="swap_content('span:i7'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i7" onclick="swap_content('span:i7'); return false;"><span class="category">Producing from scratch</span></a></h3></div><div style="display: inline" id="span:i7" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i42" onclick="swap_content('span:i42'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i42" onclick="swap_content('span:i42'); return false;"><b>ball</b></a>
+			(d)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i42" class="foldit"><br /><div class="descr_func"><div class="descr"><p> A <em class="param">d</em>-dimensional ball, realized as the <em class="param">d</em>-simplex.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td>int</td><td class="param">d</td><td><div class="descr"><div>dimension</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i40" onclick="swap_content('span:i40'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i40" onclick="swap_content('span:i40'); return false;"><b>cube_complex</b></a>
+			()  
+
+			<div style="display: inline" id="span:i40" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produces a triangulated pile of hypercubes: Each cube is split into d!
+ tetrahedra, and the tetrahedra are all grouped around one of the
+ diagonal axes of the cube.
+ DOC_FIXME
+ args: x_1, ... , x_d</p></div></div><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i41" onclick="swap_content('span:i41'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i41" onclick="swap_content('span:i41'); return false;"><b>klein_bottle</b></a>
+			()  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i41" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The Klein bottle.</p></div></div><div class="level3"><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i33" onclick="swap_content('span:i33'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i33" onclick="swap_content('span:i33'); return false;"><b>projective_plane</b></a>
+			()  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i33" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The projective plane.</p></div></div><div class="level3"><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i39" onclick="swap_content('span:i39'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i39" onclick="swap_content('span:i39'); return false;"><b>rand_knot</b></a>
+			(n_edges)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i39" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce a random knot (or link) as a polygonal closed curve in 3-space.
+ The knot (or each connected component of the link) has <em class="param">n_edges</em> edges.</p><p> The vertices are uniformly distributed in [-1,1]<sup>3</sup>, unless the <em class="param">on_sphere</em> option is set.
+ In the latter case the vertices are uniformly distributed on the 3-sphere. Alternatively
+ the <em class="param">brownian</em> option produces a knot by connecting the ends of a simulated brownian motion.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">n_edges</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">n_comp</td><td><div class="descr"><div>number of components, default is 1.</div></div></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">on_sphere</td><td></td></tr><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">brownian</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">seed</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i37" onclick="swap_content('span:i37'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i37" onclick="swap_content('span:i37'); return false;"><b>simplex</b></a>
+			(d)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i37" class="foldit"><br /><div class="descr_func"><div class="descr"><p> A simplex of dimension <em class="param">d</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td>int</td><td class="param">d</td><td><div class="descr"><div>dimension</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i35" onclick="swap_content('span:i35'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i35" onclick="swap_content('span:i35'); return false;"><b>sphere</b></a>
+			(d)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i35" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The <em class="param">d</em>-dimansional sphere, realized as the boundary of the (<em class="param">d</em>+1)-simplex.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td>int</td><td class="param">d</td><td><div class="descr"><div>dimension</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i34" onclick="swap_content('span:i34'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i34" onclick="swap_content('span:i34'); return false;"><b>surface</b></a>
+			(g)  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i34" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produce a surface of genus <em class="param">g</em>. For <em class="param">g</em> &gt;= 0
+ the client produces an orientable surface, otherwise
+ it produces a non-orientable one.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td>int</td><td class="param">g</td><td><div class="descr"><div>genus</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i36" onclick="swap_content('span:i36'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i36" onclick="swap_content('span:i36'); return false;"><b>torus</b></a>
+			()  
+
+			
+				→ SimplicialComplex<div style="display: inline" id="span:i36" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The Császár Torus. Geometric realization by Frank Lutz,
+ Electronic Geometry Model No. 2001.02.069</p></div></div><div class="level3"><h5>Returns</h5><table class="args"><tr><td><a href="#i17" onclick="unfold('span:i17');">SimplicialComplex</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i38" onclick="swap_content('span:i38'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i38" onclick="swap_content('span:i38'); return false;"><b>unknot</b></a>
+			(m, n)  
+
+			<div style="display: inline" id="span:i38" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produces a triangulated 3-sphere with the particular NASTY embedding
+ of the unknot in its 1-skeleton. The parameters <em class="param">m</em> &gt;= 2 and <em class="param">n</em> &gt;= 1
+ determine how entangled the unknot is. <em class="param">eps</em> determines the <a href="#i113" onclick="unfold('span:i113');">GEOMETRIC_REALIZATION</a>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td>int</td><td class="param">m</td><td></td></tr><tr><td>int</td><td class="param">n</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i60" onclick="unfold('span:i60');">Rational</a></td><td class="param">eps</td><td></td></tr></table></div></div></div></div></li></ul></div></div></div></li></ul></div><div class="level3"><h2>Property Types</h2><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i6" onclick="swap_content('span:i6'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i6" onclick="swap_content('span:i6'); return false;"><span class="category">Topology</span></a></h3></div><div style="display: inline" id="span:i6" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i32" onclick="swap_content('span:i32'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i32" onclick="swap_content('span:i32'); return false;"><b>CycleGroup</b></a><div style="display: inline" id="span:i32" class="foldit"><div class="descr"><p> fields: coeff, faces (defined in homology.cc)</p></div><b>derived from: </b><a href="common.html#i17" onclick="unfold('span:i17');">common::Tuple&lt;SparseMatrix&lt;Integer, NonSymmetric&gt;, Array&lt;Set&lt;Int&gt;&gt;&gt;</a><br /><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i31" onclick="swap_content('span:i31'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i31" onclick="swap_content('span:i31'); return false;"><b>HomologyGroup</b></a><div style="display: inline" id="span:i31" class="foldit"><div class="descr"><p> fields: torsion, betti (defined in homology.cc)</p></div><b>derived from: </b><a href="common.html#i17" onclick="unfold('span:i17');">common::Tuple&lt;List&lt;Pair&lt;Integer, Int&gt;&gt;, Int&gt;</a><br /><div class="level3"></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i30" onclick="swap_content('span:i30'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i30" onclick="swap_content('span:i30'); return false;"><b>IntersectionForm</b></a><div style="display: inline" id="span:i30" class="foldit"><div class="descr"><p> fields: parity, positive, negative (defined in intersection_form.cc)</p></div><b>derived from: </b><a href="common.html#i17" onclick="unfold('span:i17');">common::Tuple&lt;Int, Int, Int&gt;</a><br /><div class="level3"></div></div></div></div></li></ul></div></div></div></li></ul></div></div>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>

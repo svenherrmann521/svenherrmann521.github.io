@@ -1,0 +1,155 @@
+<div xmlns:html="http://www.w3.org/1999/xhtml" xmlns:pm="http://www.polymake.de/ns/docs#3" id="content"><h1>application: metric</h1><div class="descr"><p> This application introduces finite metric spaces. Functionality includes the computation of the <a href="#i41" onclick="unfold('span:i41');">TIGHT_SPAN</a>
+ the split decomposition and in particular a <a href="#i33" onclick="unfold('span:i33');">REALIZATION</a> of the metric by a <a href="graph.html#i14" onclick="unfold('span:i14');">graph::WeightedLabeledGraph</a>.</p></div><br/><b>imports from: </b><a href="common.html">common</a>, <a href="graph.html">graph</a><br/><b>uses: </b><a href="fan.html">fan</a>, <a href="group.html">group</a>, <a href="polytope.html">polytope</a>, <a href="topaz.html">topaz</a><br/><div class="level2"><h2><b>Objects</b></h2><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i12" onclick="swap_content('span:i12'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i12" onclick="swap_content('span:i12'); return false;"><span class="object">ManhattanNetwork</span></a></h3></div><div style="display: inline" id="span:i12" class="foldit"><div class="descr"><p> A metric that is induced by the l1 (Manhattan) distances
+ of a finite number of <a href="#i31" onclick="unfold('span:i31');">POINTS</a>. </p></div><b>derived from: </b><a href="#i13" onclick="unfold('span:i13');">Metric</a><br/><div class="level3"/><h4>Properties of ManhattanNetwork</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i32" onclick="swap_content('span:i32'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i32" onclick="swap_content('span:i32'); return false;"><b>AMBIENT_DIM</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br/><div style="display: inline" id="span:i32" class="foldit"><div class="descr"><p> Dimension of the space.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i31" onclick="swap_content('span:i31'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i31" onclick="swap_content('span:i31'); return false;"><b>POINTS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br/><div style="display: inline" id="span:i31" class="foldit"><div class="descr"><p> Points defining the Manhattan network.</p></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i13" onclick="swap_content('span:i13'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i13" onclick="swap_content('span:i13'); return false;"><span class="object">Metric</span></a></h3></div><div style="display: inline" id="span:i13" class="foldit"><div class="descr"><p> A finite metric space.
+ Distance values can be given as <em class="param">Vector</em> in <a href="#i38" onclick="unfold('span:i38');">DISTANCES</a> 
+ (lexicographically ordered) or as a <a href="#i40" onclick="unfold('span:i40');">DISTANCE_MATRIX</a>.</p></div><div class="level3"/><h4>Properties of Metric</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i37" onclick="swap_content('span:i37'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i37" onclick="swap_content('span:i37'); return false;"><b>BLOCK_DECOMPOSITION</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Pair&lt;Array&lt;Int&gt;, Matrix&lt;Scalar, NonSymmetric&gt;&gt;&gt;</a><br/><div style="display: inline" id="span:i37" class="foldit"><div class="descr"><p> The block decomposition of the metric space.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i38" onclick="swap_content('span:i38'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i38" onclick="swap_content('span:i38'); return false;"><b>DISTANCES</b>:
+		</a><a href="common.html#i13" onclick="unfold('span:i13');">common::Vector&lt;Scalar&gt;</a><br/><div style="display: inline" id="span:i38" class="foldit"><div class="descr"><p> List of distances (lexicographically ordered).</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i40" onclick="swap_content('span:i40'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i40" onclick="swap_content('span:i40'); return false;"><b>DISTANCE_MATRIX</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Scalar, NonSymmetric&gt;</a><br/><div style="display: inline" id="span:i40" class="foldit"><div class="descr"><p> Distance matrix defining the metric space.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i35" onclick="swap_content('span:i35'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i35" onclick="swap_content('span:i35'); return false;"><b>INDECOMPOSABLE</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br/><div style="display: inline" id="span:i35" class="foldit"><div class="descr"><p> True if the <a href="#i37" onclick="unfold('span:i37');">BLOCK_DECOMPOSITION</a> of the metric is trivial.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i43" onclick="swap_content('span:i43'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i43" onclick="swap_content('span:i43'); return false;"><b>LABELS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;String&gt;</a><br/><div style="display: inline" id="span:i43" class="foldit"><div class="descr"><p> Labels for the elements of the metric space.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i34" onclick="swap_content('span:i34'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i34" onclick="swap_content('span:i34'); return false;"><b>N_ELEMENTS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br/><div style="display: inline" id="span:i34" class="foldit"><div class="descr"><p> Number of Elements of the metric space.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i36" onclick="swap_content('span:i36'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i36" onclick="swap_content('span:i36'); return false;"><b>PROPER</b>:
+		</a><a href="common.html#i8" onclick="unfold('span:i8');">common::Bool</a><br/><div style="display: inline" id="span:i36" class="foldit"><div class="descr"><p> True if all distances are non-zero.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i33" onclick="swap_content('span:i33'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i33" onclick="swap_content('span:i33'); return false;"><b>REALIZATION</b>:
+		</a><a href="graph.html#i14" onclick="unfold('span:i14');">graph::WeightedLabeledGraph&lt;Scalar&gt;</a><br/><div style="display: inline" id="span:i33" class="foldit"><div class="descr"><p> A <a href="graph.html#i14" onclick="unfold('span:i14');">graph::WeightedLabeledGraph</a> realizing the metric space.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i42" onclick="swap_content('span:i42'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i42" onclick="swap_content('span:i42'); return false;"><b>SPLITS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Pair&lt;Set&lt;Int&gt;, Scalar&gt;&gt;</a><br/><div style="display: inline" id="span:i42" class="foldit"><div class="descr"><p> Split decomposition of the metric.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i41" onclick="swap_content('span:i41'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i41" onclick="swap_content('span:i41'); return false;"><b>TIGHT_SPAN</b>:
+		</a><a href="polytope.html#i42" onclick="unfold('span:i42');">polytope::TightSpan&lt;Scalar&gt;</a><br/><div style="display: inline" id="span:i41" class="foldit"><div class="descr"><p> The <a href="polytope.html#i42" onclick="unfold('span:i42');">polytope::TightSpan</a> of the metric space.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i39" onclick="swap_content('span:i39'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i39" onclick="swap_content('span:i39'); return false;"><b>TIGHT_SPAN_GRAPH</b>:
+		</a><a href="graph.html#i14" onclick="unfold('span:i14');">graph::WeightedLabeledGraph&lt;Scalar&gt;</a><br/><div style="display: inline" id="span:i39" class="foldit"><div class="descr"><p> The graph of the <a href="#i41" onclick="unfold('span:i41');">TIGHT_SPAN</a> as <a href="graph.html#i14" onclick="unfold('span:i14');">graph::WeightedLabeledGraph</a></p></div></div></div></div></li></ul></div></div></div></li></ul></div><div class="level2"><h2>User Functions</h2><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i10" onclick="swap_content('span:i10'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i10" onclick="swap_content('span:i10'); return false;"><b>circle_metric</b></a>
+			()  
+
+			<div style="display: inline" id="span:i10" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Gives a metric obtained from a circle of length n</p></div></div><div class="level3"/></div></div></div></li><li><div class="li"><div class="icon" id="icon:i11" onclick="swap_content('span:i11'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i11" onclick="swap_content('span:i11'); return false;"><b>metric_cone</b></a>
+			()  
+
+			<div style="display: inline" id="span:i11" class="foldit"><br/><div class="descr_func"><div class="descr"><p> gives the metric cone</p></div></div><div class="level3"/></div></div></div></li><li><div class="li"><div class="icon" id="icon:i7" onclick="swap_content('span:i7'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i7" onclick="swap_content('span:i7'); return false;"><b>sk_circular_metric</b></a>
+			()  
+
+			<div style="display: inline" id="span:i7" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Gives the sk-circular metric defined in the paper optimal realisations
+ of a family of finite metric</p></div></div><div class="level3"/></div></div></div></li><li><div class="li"><div class="icon" id="icon:i8" onclick="swap_content('span:i8'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i8" onclick="swap_content('span:i8'); return false;"><b>two_circle_metric</b></a>
+			()  
+
+			<div style="display: inline" id="span:i8" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Gives a metric obtained from a two circle of length n connected by an edge</p></div></div><div class="level3"/></div></div></div></li><li><div class="li"><div class="icon" id="icon:i6" onclick="swap_content('span:i6'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i6" onclick="swap_content('span:i6'); return false;"><span class="category">Other</span></a></h3></div><div style="display: inline" id="span:i6" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i26" onclick="swap_content('span:i26'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i26" onclick="swap_content('span:i26'); return false;"><b>combination</b></a>
+			(G ...)  
+
+			
+				→ WeightedLabeledGraph<div style="display: inline" id="span:i26" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Combine several weighted labeled graphs and identify nodes with identical labels</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="graph.html#i14" onclick="unfold('span:i14');">WeightedLabeledGraph</a></td><td class="param">G ...</td><td><div class="descr"><div>graphs to be combined</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="graph.html#i14" onclick="unfold('span:i14');">WeightedLabeledGraph</a></td><td/></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i27" onclick="swap_content('span:i27'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i27" onclick="swap_content('span:i27'); return false;"><b>split_decomposition</b></a>
+			(D)  
+
+			
+				→ Array&lt;Pair&lt;Set,Rational&gt; &gt;<div style="display: inline" id="span:i27" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes the split decomposition of a metric <em class="param">D</em> (encoded as a symmetric distance matrix).</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i31" onclick="unfold('span:i31');">Matrix</a></td><td class="param">D</td><td/></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Pair&lt;Set,Rational&gt; &gt;</a></td><td><div class="descr"><div>the weighted splits</div></div></td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i5" onclick="swap_content('span:i5'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i5" onclick="swap_content('span:i5'); return false;"><span class="category">Producing from scratch</span></a></h3></div><div style="display: inline" id="span:i5" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i20" onclick="swap_content('span:i20'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i20" onclick="swap_content('span:i20'); return false;"><b>bipartite_graph_metric</b></a>
+			()  
+
+			<div style="display: inline" id="span:i20" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Gives a metric obtained from a bipartite graph with component sizes n1 and n2</p></div></div><div class="level3"/></div></div></div></li><li><div class="li"><div class="icon" id="icon:i19" onclick="swap_content('span:i19'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i19" onclick="swap_content('span:i19'); return false;"><b>multipartite_graph_metric</b></a>
+			()  
+
+			<div style="display: inline" id="span:i19" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Gives a metric obtained from a multipartite graph where <em class="param">a</em> gives the numbers of elements of each component</p></div></div><div class="level3"/></div></div></div></li><li><div class="li"><div class="icon" id="icon:i23" onclick="swap_content('span:i23'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i23" onclick="swap_content('span:i23'); return false;"><b>nex2metric</b></a>
+			(file)  
+
+			
+				→ Metric<div style="display: inline" id="span:i23" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Create a metric from a nexus <em class="param">file</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td class="param">file</td><td/></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i13" onclick="unfold('span:i13');">Metric</a></td><td><div class="descr"/></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i24" onclick="swap_content('span:i24'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i24" onclick="swap_content('span:i24'); return false;"><b>points2metric</b></a>
+			(points)  
+
+			
+				→ Metric<div style="display: inline" id="span:i24" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Produces a metric obtained from the l1 (Manhattan) distances of <em class="param">points</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i31" onclick="unfold('span:i31');">Matrix</a></td><td class="param">points</td><td/></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i13" onclick="unfold('span:i13');">Metric</a></td><td/></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i25" onclick="swap_content('span:i25'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i25" onclick="swap_content('span:i25'); return false;"><b>split_metric</b></a>
+			(n, split)  
+
+			
+				→ SparseVector&lt;Rational&gt;<div style="display: inline" id="span:i25" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes the split (pseudo) metric of a single split.
+ Output is a vector that can be used as DISTANCES property to obtain a proper metric object.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">n</td><td><div class="descr"><div>cardinality of the space</div></div></td></tr><tr><td><a href="common.html#i16" onclick="unfold('span:i16');">Set&lt;Int&gt;</a></td><td class="param">split</td><td><div class="descr"><div>(only one of the sets has to be given)</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i47" onclick="unfold('span:i47');">SparseVector&lt;Rational&gt;</a></td><td/></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i21" onclick="swap_content('span:i21'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i21" onclick="swap_content('span:i21'); return false;"><b>split_system_metric</b></a>
+			(n, splits)  
+
+			
+				→ SparseVector&lt;Rational&gt;<div style="display: inline" id="span:i21" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes a metric from a split system <em class="param">splits</em>.
+ Output is a vector that can be used as DISTANCES property to obtain a proper metric object.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">n</td><td><div class="descr"><div>cardinality of the space</div></div></td></tr><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Set&lt;int&gt; &gt;</a></td><td class="param">splits</td><td><div class="descr"><div>(one of the set for each split)</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i47" onclick="unfold('span:i47');">SparseVector&lt;Rational&gt;</a></td><td/></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i22" onclick="swap_content('span:i22'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i22" onclick="swap_content('span:i22'); return false;"><b>split_system_rand_metric</b></a>
+			(n, splits, b)  
+
+			
+				→ SparseVector&lt;Rational&gt;<div style="display: inline" id="span:i22" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes a metric from a split system <em class="param">splits</em> assigning each
+ split a random integer weight between 1 and b.
+ Output is a vector that can be used as DISTANCES property to obtain a proper metric object.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">n</td><td><div class="descr"><div>cardinality of the space</div></div></td></tr><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Set&lt;Int&gt; &gt;</a></td><td class="param">splits</td><td><div class="descr"><div>(one of the set for each split)</div></div></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">b</td><td/></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i47" onclick="unfold('span:i47');">SparseVector&lt;Rational&gt;</a></td><td/></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i18" onclick="swap_content('span:i18'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i18" onclick="swap_content('span:i18'); return false;"><b>weighted_split_system_metric</b></a>
+			(n, splits)  
+
+			
+				→ SparseVector&lt;Rational&gt;<div style="display: inline" id="span:i18" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Computes a metric from a weightend split system <em class="param">splits</em>.
+ Each splits is given as a pair of one of the sets and the weight.
+ Output is a vector that can be used as DISTANCES property to obtain a proper metric object.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">n</td><td><div class="descr"><div>cardinality of the space</div></div></td></tr><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Pair&lt;Set&lt;Int&gt;, Rational&gt; &gt;</a></td><td class="param">splits</td><td/></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="common.html#i47" onclick="unfold('span:i47');">SparseVector&lt;Rational&gt;</a></td><td/></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i9" onclick="swap_content('span:i9'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i9" onclick="swap_content('span:i9'); return false;"><span class="category">Producing from Scratch</span></a></h3></div><div style="display: inline" id="span:i9" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i28" onclick="swap_content('span:i28'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i28" onclick="swap_content('span:i28'); return false;"><b>thrackle_metric</b></a>
+			(n)  
+
+			
+				→ Metric<div style="display: inline" id="span:i28" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Compute a metric such that the f-vector of its tight span is maximal among all metrics with <em class="param">n</em> points.
+ This metric can be interpreted as a lifting function for the thrackle triangulation (see de Loera,
+ Sturmfels and Thomas: Groebner Basis and triangultaions of the second hypersimplex) and as the the metric
+ obtained by a maximal circular split system.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">n</td><td><div class="descr"><div>the number of points</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i13" onclick="unfold('span:i13');">Metric</a></td><td/></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i4" onclick="swap_content('span:i4'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i4" onclick="swap_content('span:i4'); return false;"><span class="category">Utilities</span></a></h3></div><div style="display: inline" id="span:i4" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i17" onclick="swap_content('span:i17'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i17" onclick="swap_content('span:i17'); return false;"><b>metric2nex</b></a>
+			(m, file)  
+
+			<div style="display: inline" id="span:i17" class="foldit"><br/><div class="descr_func"><div class="descr"><p> Convert a polymake metric into a nex-file.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i13" onclick="unfold('span:i13');">Metric</a></td><td class="param">m</td><td/></tr><tr><td><a href="common.html#i10" onclick="unfold('span:i10');">String</a></td><td class="param">file</td><td><div class="descr"><div>default value: standard output</div></div></td></tr></table></div></div></div></div></li></ul></div></div></div></li></ul></div></div>

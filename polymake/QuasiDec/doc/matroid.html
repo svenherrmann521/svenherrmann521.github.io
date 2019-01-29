@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:pm="http://www.polymake.de/ns/docs#3" xml:lang="en" lang="en">
+  <head>
+    <title>polymake documentation</title>
+    <link rel="stylesheet" href="docstyle.css" />
+    <script type="text/javascript" src="functions.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  </head>
+  <body onload="start()">
+    <div id="header_top">
+      <div class="biglogo">
+        <img src="images/pmlogobig.png" alt="polymake" />
+      </div>
+      <a href="index.html">
+        <img src="images/doclogo.png" alt="polymake wiki" class="toplogo" />
+      </a>
+    </div>
+    <div id="container">
+      <div id="page">
+        <div class="sidebar">
+          <div class="sidebox">
+            <h1>Navigation</h1>
+            <ul>
+              <li>
+                <a href="index.html#apps">applications</a>
+              </li>
+              <li>
+                <a href="core.html">core functionality</a>
+              </li>
+              <li>
+                <a href="doc_index.html">index</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div xmlns="" id="content"><h1>application: matroid</h1><div class="descr"><p> Matroids encode the concept of "(in)dependence" in an abstract way.  You
+ can define matroids via vector configurations or graphs, do basic
+ conversions between different descriptions and perform basic operations such
+ as deletions and contractions.</p></div><br /><b>imports from: </b><a href="common.html">common</a>, <a href="graph.html">graph</a><br /><b>uses: </b><a href="group.html">group</a>, <a href="polytope.html">polytope</a>, <a href="topaz.html">topaz</a><br /><div class="level2"><h2><b>Objects</b></h2><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i8" onclick="swap_content('span:i8'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="object"><h3><a href="#" class="javalink" id="i8" onclick="swap_content('span:i8'); return false;"><span class="object">Matroid</span></a></h3></div><div style="display: inline" id="span:i8" class="foldit"><div class="descr"><p> A matroid on the set <em class="param">{0,...,n-1}</em>.  Here <em class="param">n</em> is the same as <a href="#i17" onclick="unfold('span:i17');">N_ELEMENTS</a>.</p></div><div class="level3"></div><h4>Properties of Matroid</h4><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i21" onclick="swap_content('span:i21'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i21" onclick="swap_content('span:i21'); return false;"><b>BASES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i21" class="foldit"><div class="descr"><p> Subsets of the ground set which form the bases of the matroid.
+ Note that if you want to define a matroid via its bases, you should also specify <a href="#i17" onclick="unfold('span:i17');">N_ELEMENTS</a>, because
+ we allow matroids with loops.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i23" onclick="swap_content('span:i23'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i23" onclick="swap_content('span:i23'); return false;"><b>CIRCUITS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i23" class="foldit"><div class="descr"><p> Circuits, i.e., minimal dependent sets.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i22" onclick="swap_content('span:i22'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i22" onclick="swap_content('span:i22'); return false;"><b>COCIRCUITS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i22" class="foldit"><div class="descr"><p> Cocircuits (or bonds) of the matroid, i.e., minimal sets intersecting every basis.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i26" onclick="swap_content('span:i26'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i26" onclick="swap_content('span:i26'); return false;"><b>LABELS</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;String&gt;</a><br /><div style="display: inline" id="span:i26" class="foldit"><div class="descr"><p> Unique names assigned to the elements of the matroid.</p><p> For a matroid build from scratch, you should create this property by yourself.
+ If you build the matroid with a construction client, (e.g. <a href="#i10" onclick="unfold('span:i10');">matroid_from_graph</a>)
+ the labels may be assigend for you in a meaningful way.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i25" onclick="swap_content('span:i25'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i25" onclick="swap_content('span:i25'); return false;"><b>NON_BASES</b>:
+		</a><a href="common.html#i28" onclick="unfold('span:i28');">common::Array&lt;Set&lt;Int&gt;&gt;</a><br /><div style="display: inline" id="span:i25" class="foldit"><div class="descr"><p> All subsets of the ground sets with cardinality <a href="#i27" onclick="unfold('span:i27');">RANK</a> that are not bases.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i20" onclick="swap_content('span:i20'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i20" onclick="swap_content('span:i20'); return false;"><b>N_BASES</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i20" class="foldit"><div class="descr"><p> The number of <a href="#i21" onclick="unfold('span:i21');">BASES</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i28" onclick="swap_content('span:i28'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i28" onclick="swap_content('span:i28'); return false;"><b>N_CIRCUITS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i28" class="foldit"><div class="descr"><p> The number of <a href="#i23" onclick="unfold('span:i23');">CIRCUITS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i24" onclick="swap_content('span:i24'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i24" onclick="swap_content('span:i24'); return false;"><b>N_COCIRCUITS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i24" class="foldit"><div class="descr"><p> The number of <a href="#i22" onclick="unfold('span:i22');">COCIRCUITS</a>.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i17" onclick="swap_content('span:i17'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i17" onclick="swap_content('span:i17'); return false;"><b>N_ELEMENTS</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i17" class="foldit"><div class="descr"><p> Size of the ground set.  The ground set itself always consists of the first integers starting with zero.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i18" onclick="swap_content('span:i18'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i18" onclick="swap_content('span:i18'); return false;"><b>POINTS</b>:
+		</a><a href="common.html#i31" onclick="unfold('span:i31');">common::Matrix&lt;Rational, NonSymmetric&gt;</a><br /><div style="display: inline" id="span:i18" class="foldit"><div class="descr"><p> If the matroid is realizable over the rationals, this property contains
+ (homogeneous) coordinates for some realization. Specifying coordinates is one way
+ to define a matroid.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i19" onclick="swap_content('span:i19'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i19" onclick="swap_content('span:i19'); return false;"><b>POLYTOPE</b>:
+		</a><a href="polytope.html#i43" onclick="unfold('span:i43');">polytope::Polytope&lt;Rational&gt;</a><br /><div style="display: inline" id="span:i19" class="foldit"><div class="descr"><p> Polytope whose vertices are the characteristic vectors of the bases.</p></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i27" onclick="swap_content('span:i27'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i27" onclick="swap_content('span:i27'); return false;"><b>RANK</b>:
+		</a><a href="common.html#i58" onclick="unfold('span:i58');">common::Int</a><br /><div style="display: inline" id="span:i27" class="foldit"><div class="descr"><p> Rank of the matroid, i.e., number of elements in each basis.</p></div></div></div></div></li></ul></div></div></div></li></ul></div><div class="level2"><h2>User Functions</h2><ul class="unfoldable"><li><div class="li"><div class="icon" id="icon:i7" onclick="swap_content('span:i7'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i7" onclick="swap_content('span:i7'); return false;"><span class="category">Others</span></a></h3></div><div style="display: inline" id="span:i7" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i15" onclick="swap_content('span:i15'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i15" onclick="swap_content('span:i15'); return false;"><b>matroid_test</b></a>
+			(bases)  
+
+			<div style="display: inline" id="span:i15" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Tests whether the given <em class="param">bases</em> do actually form the bases of a matroid.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i28" onclick="unfold('span:i28');">Array&lt;Set&lt;Int&gt;&gt;</a></td><td class="param">bases</td><td></td></tr></table><h5>Options</h5><table class="args"><tr><td><a href="common.html#i8" onclick="unfold('span:i8');">Bool</a></td><td class="param">print</td><td><div class="descr"><div>if set to true the output tells which condition fails;
+        default value is 0</div></div></td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i5" onclick="swap_content('span:i5'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i5" onclick="swap_content('span:i5'); return false;"><span class="category">Producing a new matroid from other.</span></a></h3></div><div style="display: inline" id="span:i5" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i12" onclick="swap_content('span:i12'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i12" onclick="swap_content('span:i12'); return false;"><b>contraction</b></a>
+			(m, element)  
+
+			
+				→ Matroid<div style="display: inline" id="span:i12" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The matroid obtained from a matroid <em class="param">m</em> by contraction of <em class="param">element</em> .</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i8" onclick="unfold('span:i8');">Matroid</a></td><td class="param">m</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">element</td><td><div class="descr"><div>index of element to be contracted</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i8" onclick="unfold('span:i8');">Matroid</a></td><td></td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i6" onclick="swap_content('span:i6'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i6" onclick="swap_content('span:i6'); return false;"><span class="category">Producing a new matroid from others</span></a></h3></div><div style="display: inline" id="span:i6" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i13" onclick="swap_content('span:i13'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i13" onclick="swap_content('span:i13'); return false;"><b>deletion</b></a>
+			(m, element)  
+
+			
+				→ Matroid<div style="display: inline" id="span:i13" class="foldit"><br /><div class="descr_func"><div class="descr"><p> The matroid obtained from a matroid <em class="param">m</em> by deletion of <em class="param">element</em> .</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i8" onclick="unfold('span:i8');">Matroid</a></td><td class="param">m</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">element</td><td><div class="descr"><div>index of element to be deleted</div></div></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i8" onclick="unfold('span:i8');">Matroid</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i14" onclick="swap_content('span:i14'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i14" onclick="swap_content('span:i14'); return false;"><b>dual</b></a>
+			(m)  
+
+			
+				→ Matroid<div style="display: inline" id="span:i14" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Produces the dual of a given matroid <em class="param">m</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="#i8" onclick="unfold('span:i8');">Matroid</a></td><td class="param">m</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i8" onclick="unfold('span:i8');">Matroid</a></td><td></td></tr></table></div></div></div></div></li></ul></div></div></div></li><li><div class="li"><div class="icon" id="icon:i4" onclick="swap_content('span:i4'); return false;">
+		 	
+	</div><div class="unfoldable"><div class="category"><h3><a href="#" class="javalink" id="i4" onclick="swap_content('span:i4'); return false;"><span class="category">Producing from scratch</span></a></h3></div><div style="display: inline" id="span:i4" class="foldit"><ul><li><div class="li"><div class="icon" id="icon:i10" onclick="swap_content('span:i10'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i10" onclick="swap_content('span:i10'); return false;"><b>matroid_from_graph</b></a>
+			(g)  
+
+			
+				→ Matroid<div style="display: inline" id="span:i10" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Creates a graphical matroid from a graph <em class="param">g</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="graph.html#i14" onclick="unfold('span:i14');">graph::Graph</a></td><td class="param">g</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i8" onclick="unfold('span:i8');">Matroid</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i9" onclick="swap_content('span:i9'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i9" onclick="swap_content('span:i9'); return false;"><b>matroid_from_matroid_polytope</b></a>
+			(p)  
+
+			
+				→ Matroid<div style="display: inline" id="span:i9" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Creates a matroid from the corresponding matroid
+ polytope <em class="param">p</em>.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="polytope.html#i38" onclick="unfold('span:i38');">polytope::Polytope</a></td><td class="param">p</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i8" onclick="unfold('span:i8');">Matroid</a></td><td></td></tr></table></div></div></div></div></li><li><div class="li"><div class="icon" id="icon:i11" onclick="swap_content('span:i11'); return false;">
+		 	
+	</div><div class="unfoldable"><a href="#" class="javalink" id="i11" onclick="swap_content('span:i11'); return false;"><b>uniform_matroid</b></a>
+			(r, n)  
+
+			
+				→ Matroid<div style="display: inline" id="span:i11" class="foldit"><br /><div class="descr_func"><div class="descr"><p> Creates the uniform matroid of rank <em class="param">r</em> with <em class="param">n</em> elements.</p></div></div><div class="level3"><h5>Parameters</h5><table class="args"><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">r</td><td></td></tr><tr><td><a href="common.html#i58" onclick="unfold('span:i58');">Int</a></td><td class="param">n</td><td></td></tr></table><h5>Returns</h5><table class="args"><tr><td><a href="#i8" onclick="unfold('span:i8');">Matroid</a></td><td></td></tr></table></div></div></div></div></li></ul></div></div></div></li></ul></div></div>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>

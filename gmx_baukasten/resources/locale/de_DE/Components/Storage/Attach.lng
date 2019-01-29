@@ -1,0 +1,5 @@
+cannot_open_file = "Die Datei kann nicht geöffnet werden."
+content_empty = "Die gespeicherte Datei ist leer."
+delete_file = "Datei kann nicht gelöscht werden."
+dirname_attach_not_exists = "Die Verzeichnisanhänge existieren nicht."
+free_space_disk = "Die Datei kann nicht gespeichert werden. Wahrscheinlich steht kein freier Speicherplatz auf der Festplatte zur Verfügung."
