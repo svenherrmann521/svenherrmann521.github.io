@@ -3,35 +3,18 @@
 /*
 Zimplit CMS version 3.0
 
-Zimplit CMS is a Content Management System developed by
-Welisa, Inc. Copyright (C) 2008 Welisa Inc zimplit@zimplit.org.
+Zimplit GNU Affero General Public Licence Version 3
+=======================================================================
+This program is licensed under the AGPLv3 with the additional restriction that no other brands, trade names, trademarks or service marks may be used for derivative products as specified in AGPLv3 section 7(e).
 
--- AVAILABLE LICENCE TYPES --
+All names, links and logos of Zimplit must be kept as in original distribution without any changes in all software screens, specially in start-up page and the software header, even if the application source code has been changed or updated or code has been added.
 
-Zimplit CMS is available under three different licenses:
+Additionally you are required to keep a visible link to Zimplit Legal Notices as specified in AGPLv3 section 5(d) and 7(b). The required link to the Zimplit Legal Notices must be static, visible and readable, and the text in the Zimplit Legal Notices may not be altered.
 
-1) AGPL 3
-You must keep a visible link to Zimplit Legal Notices, on every generated page. The required link to the Zimplit Legal Notices must be static, visible and readable, 
-and the text in the Zimplit Legal Notices may not be altered.
+If you need commercial licence to remove this kind of restrictions please contact us.
 
-2) Linkware / "Powered by Zimplit CMS" Link Requirement Licence
-Same as AGPL, but instead of keeping a link to the Zimplit Legal Notices, you must place a static, visible and readable link to www.zimplit.org with the text or an
-image stating "Powered by Zimplit CMS" on every generated page.
-
-3) Commercial Licence
-This license will allow you to remove the Zimplit Legal Notices/"Powered by Zimplit CMS" link at one specific domain. This license will also protect your modifications 
-against the copyleft requirements in AGPL 3 and give access to registry in the user support forum.
-Commercial licenses are available at www.zimplit.org/buy_commercial_license.html. 
-
-
-You may change this LICENCE TYPES SECTION to relevant information, if you have purchased a commercial licence, 
-but then the files may not be distributed to any other domain not covered by a commercial licence.
-
--- LICENCE TYPES SECTION END -
-
-This copyright note must under no circumstances be removed from this file and any distribution of code covered by this licence.
-
-For more information please visit http://www.zimplit.org
+You can see the AGPLv3 licence at: http://www.gnu.org/licenses/agpl.html
+======================================================================= 
 
 */
 
@@ -104,13 +87,14 @@ header('Cache-Control: post-check=0, pre-check=0', FALSE);
  * Example: zimplit.php?action=listfiles
  */
 
+/* get config file */ 
+require 'Zconfig.php';
+
 //GET data
 $GDsupport = false; 
 if (extension_loaded('gd') && function_exists('gd_info')) {
     $GDsupport = true; 
 }
-
-$defaultLang = 'en';
  
 if (!isset($_GET['action'])){ $action = NULL; } else {$action = $_GET['action'];}
 if (!isset($_GET['file'])){	$file = NULL;} else {$file = $_GET['file'];}
@@ -132,6 +116,8 @@ if (isset($_POST['password'])){$password = $_POST['password'];}
 if (isset($_POST['password_again'])){$password_again = $_POST['password_again'];}
 if (!isset($_POST['email'])){$email = NULL;} else {$email = $_POST['email'];} 
 if (!isset($_POST['remember'])){$remember = NULL;} else {$remember = $_POST['remember'];}
+
+/* section of language and storing it in cookie */
 if(isset($_POST['lang'])){
 	$settings['lang'] =$_POST['lang']; 
 	setcookie("ZsessionLang", $settings['lang'], time()+60*60*24*30); 
@@ -144,14 +130,12 @@ if(isset($_POST['lang'])){
 	} else {
 		$settings['lang'] = $defaultLang;
 	}
-
 }else{
 	$settings['lang'] = $defaultLang;
 }
 
 //Settings
-$UfileLocation = 'http://client.zimplit.com/';
-$userID = 'publicUser';
+$userID = $mustbeUid;
 $version = '3.0';
 preg_match('/([^\/]+\.php)/', $_SERVER['SCRIPT_NAME'], $matches1);
 $settings['thisPhp'] = $matches1[1];
@@ -171,18 +155,7 @@ $settings['confirmationContent'] = "To confirm password change of Your Zimplit e
 $currentCssPath ='';
 $currentAbsPath ='';
 
-function getExtParam($reqestparam){
-	global $settings, $locationOfEditor, $userID,$UfileLocation,$version;
-	$rq = $UfileLocation.'users.php';
-	$rq .= '?userID='.$userID;
-	$rq .= '&ctype='.$reqestparam;
-	$rq .= '&indexfile='.getIndexFile();
-	$rq .= '&scriptname='.$settings['thisPhp'];
-	$rq .= '&ver='.$version;
-	$rq .= '&lang='.$settings['lang'];
-	$answ = file_get_contents($rq);
-	return $answ;
-}
+include $editorDir.'user.php';
 $settings['templates_remote_path'] = getExtParam('templpagepath'); 
 
 //Local variables
@@ -321,16 +294,16 @@ ZmaxpicH = "800"; ';
 
 //Show login screen
 function showLoginScreen() {
-	global $settings, $locationOfEditor, $userID,$UfileLocation,$version;
-	$content = getExtParam('login_screen1'); //file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=login_screen1&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version);
+	global $settings, $locationOfEditor, $userID, $version;
+	$content = getExtParam('login_screen1'); 
 	echo $content;
 }
 
 
 //Show registration screen
 function showRegistrationScreen() {
-	global $settings, $locationOfEditor, $userID,$UfileLocation,$version;
-	$content = getExtParam('login_screen2'); // file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=login_screen2&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version);
+	global $settings, $locationOfEditor, $userID,$version;
+	$content = getExtParam('login_screen2');
 	echo $content;
 }
 
@@ -411,16 +384,12 @@ function generateRandomCode($length) {
 
 //Generate and send a new password
 function generateNewPassword() {
-	global $settings, $securityCode, $locationOfEditor, $userID, $UfileLocation,$version;
-	//$chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
-	
+	global $settings, $securityCode, $locationOfEditor, $userID,$version;
 	$content = file_get_contents($settings['passfile']);
 	preg_match('/\$e=\"([^\"]*)\"/', $content, $matches);
 	$email = $matches[1];
-	
 	preg_match('/\$u=\"([^\"]*)\"/', $content, $matches);
 	$username = $matches[1];
-	
 	$securityCode2 = md5(date("F d Y H:i:s.", filemtime($settings['passfile'])));
 	
 	if ($securityCode) {
@@ -440,11 +409,11 @@ function generateNewPassword() {
 			mail($email, 'Your new Zimplit password', $message);
 			
 			/* the html displayed when passwd confirmation sent */
-			$content = getExtParam('pwd_confirm1'); //file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=pwd_confirm1&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version);
+			$content = getExtParam('pwd_confirm1');
 			if ($r > 0) echo $content;
 			else return false;
 		} else {
-			$content = getExtParam('pwd_confirm2'); //file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=pwd_confirm2&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version);
+			$content = getExtParam('pwd_confirm2');
 			echo $content;
 		}
 	} else {
@@ -453,7 +422,7 @@ function generateNewPassword() {
 		mail($email, 'A new password was requested from Zimplit editor', $message);
 		
 		/* the html displayed when passwd confirmation sent */
-		$content = getExtParam('pwd_confirm3'); //file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=pwd_confirm3&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version);
+		$content = getExtParam('pwd_confirm3'); 
 		echo $content;
 	
 	}
@@ -570,7 +539,7 @@ function getHTML($file) {
 //Get the HTML content from the file with editor .
 //Returns FALSE on falure, html content on success
 function getHTML1($file) {
-	global  $locationOfEditor,$GDsupport, $userID,$UfileLocation,$settings,$version;
+	global  $locationOfEditor,$GDsupport, $userID,$settings,$version;
 	if (is_file($file)) {
 		if (is_readable($file)) {
 			
@@ -580,12 +549,7 @@ function getHTML1($file) {
 			} else {
 				$addscripts = '"; var ZphpName="'.$settings['thisPhp'];
 				$LoadingFrameHtmlTop = getExtParam('main_screen1').$GDsupport.$addscripts.getExtParam('main_screen2');
-			/*	file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=main_screen1&indexfile='.getIndexFile().'&ver='.$version.'&scriptname='.$settings['thisPhp'])
-				.$GDsupport.$addscripts.
-				file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=main_screen2&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version);*/
-				
-										 
-				$LoadingFrameHtmlBottom = getExtParam('main_screen3'); //file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=main_screen3&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version);
+				$LoadingFrameHtmlBottom = getExtParam('main_screen3'); 
 				$content = $LoadingFrameHtmlTop . $file . $LoadingFrameHtmlBottom;
 			}
 			
@@ -933,18 +897,16 @@ function checkIfHasIndexFile(){
 
 
 function loadExternalTemplHtml($fileaddr){
-	global  $locationOfEditor, $userID, $UfileLocation, $settings, $version;
-	//header('Content-Type: text/html');
-	
-		$LoadingFrameHtmlTop = getExtParam('templpage1'); //file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=templpage1&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version);
-		$LoadingFrameHtmlBottom = getExtParam('templpage2'); //file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=templpage2&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version);
+	global  $locationOfEditor, $userID, $settings, $version;
+		$LoadingFrameHtmlTop = getExtParam('templpage1'); 
+		$LoadingFrameHtmlBottom = getExtParam('templpage2');
 		$content = $LoadingFrameHtmlTop . file_get_contents($fileaddr) . $LoadingFrameHtmlBottom;
 	echo $content;
 }
 
 function loadTemplPage($fileaddr){
-	global $settings, $userID, $UfileLocation, $version;
-	loadExternalTemplHtml(getExtParam('templpagepath')); // file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=templpagepath&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp']).$fileaddr.'&ver='.$version);
+	global $settings, $userID, $version;
+	loadExternalTemplHtml(getExtParam('templpagepath')); 
 }
 
 
@@ -1028,7 +990,7 @@ if (file_exists($settings['passfile'])) {
 					header( 'Location: '.$settings['thisPhp'] ) ;
 					echo '<html><head><script>document.location = "'.$settings['thisPhp'].'";</script></head<body></body></html>';
 				} else {
-					loadExternalTemplHtml(getExtParam('templpageindex')); //file_get_contents($UfileLocation.'users.php?userID='.$userID.'&ctype=templpageindex&indexfile='.getIndexFile().'&scriptname='.$settings['thisPhp'].'&ver='.$version));
+					loadExternalTemplHtml(getExtParam('templpageindex')); 
 				}
 			}
 		}		
