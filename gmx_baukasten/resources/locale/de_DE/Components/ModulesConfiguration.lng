@@ -1,3 +1,0 @@
-moduleUpgraded = "Das %s-Modul wurde aktualisiert. Möglicherweise arbeitet es nicht einwandfrei. Versuchen Sie, Ihre Site erneut zu publizieren."
-newerSbRequired = "Das Modul  %s wurde aktualisiert. Dieses Modul erfordert eine neuere Version von Sitebuilder. Bitte kontaktieren Sie den Sitebuilder-Administrator."
-republicationRequired = "Das %s-Modul wurde aktualisiert. Dieses Modul kann nicht mit alten Site-Versionen arbeiten. Bitte publizieren Sie Ihre Site erneut, damit auch diese aktualisiert wird."

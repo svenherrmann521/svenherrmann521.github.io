@@ -1,3 +1,0 @@
-create_error = "Das Erstellen von Nachrichten ist im Vorschau-Modus nicht möglich."
-delete_error = "Im Vorschaumodus können keine Nachrichten gelöscht werden."
-update_error = "Das Aktualisieren von Nachrichten ist im Vorschau-Modus nicht möglich."

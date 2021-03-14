@@ -1,5 +1,0 @@
-modules_api_verions_not_compatibled = "Die API-Version der Site-Module ist nicht kompatibel mit der Modul-API-Version, die auf der publizierten Site verwendet wird. Es wird empfohlen, Ihre Site erneut zu publizieren."
-no_modules_api_version_published_site = "Auf der publizierten Site gibt es keine API-Version der Module."
-no_password_on_published_site = "Auf der publizierten Site gibt es kein Passwort."
-no_published_site_access = "Auf die mit XCopy publizierte Site kann zur Zeit nicht zugegriffen werden."
-password_not_confirmed = "Das Passwort der Site stimmt nicht mit dem Passwort der publizierten Site überein."
